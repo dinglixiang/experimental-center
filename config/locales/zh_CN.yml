@@ -1,0 +1,9 @@
+zh_CN:
+  system:
+    title: 艺术教学实验中心
+  simple_form:
+    labels:
+      notice:
+        title: 标题
+        content: 内容
+        author: 作者

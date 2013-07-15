@@ -1,0 +1,82 @@
+*{margin:0px; padding:0px;}
+body{font:12px; font-family:'黑体';}
+ul{list-style-type:none;}
+a{text-decoration:none;}
+/*全局变量定义*/
+
+
+.container-all{width:964px; height:auto; margin:0 auto; background:#fff; background:url(body.gif) repeat-y; padding:0 2px; border-top:1px solid #fff;}
+/*整体container*/
+
+
+/*logo*/
+.logo{height:74px; border-bottom:1px solid #000; width:960px; margin-left:3px;}
+.logo img{height:45; display:block; margin:30px 0 0 65px;}
+/*logo*/
+
+
+/*一级导航*/
+.nav1{height:20px; padding:8px 80px;}
+.nav1 ul li{float:left; font:14px; color: #9c9c9c; margin-right:10px; font-weight:600; letter-spacing:1px;}
+.nav1 ul li a{display:block; padding:1px 11px; color:#999;}
+.nav1 ul li a:hover{background:#f8d449; color:#000;}
+/*一级导航*/
+
+
+/*通栏广告*/
+.ad{height:337px; margin-top:8px;}
+.ad img{ margin:5px auto; display:block;}
+/*通栏广告*/
+
+
+/*通知公告*/
+.notice{width:225px; height:341px; background:url(ArtWeb_10.gif) no-repeat;  position:relative; left:280px; top:-330px; padding:10px 20px; margin-left: 355px;}
+.notice h1{color:#f8d449; margin-bottom:10px;} 
+.notice p{font-size:15px;  font-weight:500; color:#fff; margin-bottom:10px;}
+.notice p span{color:#f8d449;}
+.notice h2 a{ display:block; color:#f8d449; font-size:16px; font-weight:400; margin-top:40px;}
+.notice h2 a:hover{text-decoration:underline;}
+/*通知公告*/
+
+
+/*inform*/
+.infrom{height:350px; margin-top:40px; }
+
+
+	/*预约*/
+.order{ width:235px; height:250px; padding:60px 10px 2px 40px;  float:left; background:url(ArtWeb_13.gif) no-repeat left top; font-size:12px; margin:20px 5px 0px 40px;}
+.order ul{ list-style-type:disc;margin-left: 0px;} 
+.order ul li{margin-bottom:5px;}
+.order ul li a{color:#000;}
+.order ul li span{color:#09F; float:right;}
+.order ul li a:hover{ color:#666; text-decoration:underline;}
+.order ul li a span:hover{color:#666;}
+.order h1 a{display:block; width:100px; height:24px; background:url(ArtWeb_26.gif) no-repeat; margin:20px 0px 0px 10px;}
+.order h1 a:hover{background:url(ArtWeb_29.gif) no-repeat;}
+	/*预约*/
+	
+	/*设备*/
+.equipment{ width:235px; height:250px; padding:60px 10px 2px 40px;  float:left; background:url(ArtWeb_11.gif) no-repeat left top; font-size:12px; margin:18px 0px 0px 5px;}
+.equipment ul{ list-style-type:disc;margin-left: 0px;}
+.equipment ul li{margin-bottom:5px;}
+.equipment ul li a{color:#000;}
+.equipment ul li span{color:#09F; float:right;}
+.equipment ul li a:hover{ color:#666; text-decoration:underline;}
+.equipment ul li a span:hover{color:#666;}
+.equipment h1 a{display:block; width:100px; height:24px; background:url(ArtWeb_26.gif) no-repeat; margin:20px 0px 0px 10px;}
+.equipment h1 a:hover{background:url(ArtWeb_29.gif) no-repeat;}
+	/*设备*/
+
+.tel{ width:293px; height:177px; float:left; background:url(ArtWeb_22.gif) no-repeat; margin:50px 0px 0px 40px;}
+.tel:hover{background:url(ArtWeb_22_1.gif) no-repeat;}
+/*inform*/
+
+
+/*版权*/
+.copyright{ width:960px; height:18px; background:#f8d449; font-size:12px; padding:6px 0px 0px 0px; margin-left:3px;}
+.copyright span{float:left; margin-left:40px;}
+.copyright li{float:left; margin-left:10px;}
+.copyright li a{color:#333;}
+.copyright li a:hover{color:#000; text-decoration:underline;}
+.copyright li.cop{ display:block; float:right; margin-right:40px;}
+/*版权*/
