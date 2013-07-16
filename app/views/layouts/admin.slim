@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title= t('system.title') 
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  body 
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          .span11.pull-left
+            span.brand.pull-left
+              i.icon-home
+              a href= admin_root_path title="回首页"
+                strong.text-info=t('system.title')
+            span.divider-vertical
+              ul class="nav"                 
+                li = link_to '设备管理','#'
+                li = link_to '场地管理','#'
+                li = link_to '规章制度','#'
+                li = link_to '视频共享','#'
+                li = link_to '通知管理',admin_notices_path                    
+                li = link_to '退出',destroy_user_session_path,:method => 'delete',:class => 'pull-right'
+
+    .container style="margin-top:60px;"
+      .container-fluid
+        .row-fluid
+          = yield
+      .footer
+        p.pull-right
+          a href="#" 回到顶端
+        p
+          |艺术教学实验中心 | &copy; 2013 

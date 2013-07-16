@@ -2,11 +2,13 @@ ExperimentalCenter::Application.routes.draw do
 
   devise_for :users
   namespace :admin do
+    root :to => 'home#index'
     resources :notices
+    resources :users
   end
 
-  resources :notices
-  get "home/index"
+  resources :notices,only: [:index]
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,6 +1,7 @@
 zh_CN:
   system:
     title: 艺术教学实验中心
+    notice: 通知管理
   simple_form:
     labels:
       notice:

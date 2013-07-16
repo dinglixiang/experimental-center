@@ -1,12 +1,24 @@
-= render 'layouts/admin_navigation'
-h2 List notices
-table class="table table-hover table-bordered"
+h4
+  i.icon-list-alt
+  span.text-info =t('system.notice')
+  = link_to "添加通知",new_admin_notice_path, class: "pull-right"
+  
+table class="table table-bordered table-hover"
 	thead
 		tr
-			th Title
-			th Author
+			th.index_number 序号
+			th 标题
+			th 作者
+			th 创建时间
+			th 操作
 	tbody
-	  - @notices.each do |notice|
+	  - @notices.each_with_index do |notice,index|
 	  	tr
-	  	  td = notice.title
+	  	  td = index = index+1 
+	  	  td = notice.title	  	  
 	  	  td = notice.author
+	  	  td = notice.created_at().strftime('%Y-%m-%d %H:%M:%S')
+	  	  td
+		  	  = link_to "编辑", edit_admin_notice_path(notice)
+	          ||
+	          = link_to "删除", admin_notice_path(notice) , method: :delete, data: { confirm: '确定此操作吗？' }		

@@ -1,4 +1,4 @@
-= simple_form_for @notice do |f|
+= simple_form_for @notice,url: admin_notices_path(@notice) do |f|
 	= f.input :title
 	= f.input :author
 	= f.input :content
