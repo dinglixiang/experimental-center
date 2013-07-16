@@ -18,18 +18,20 @@ module Admin
 				render :new
 			end
 		end
+		def edit
+			@notice = Notice.find(params[:id])
+		end
 
 		def update
 			@notice = Notice.find(params[:id])
 			if @notice.update_attributes(params[:notice])
 				redirect_to admin_notices_path,:notice => "更新成功!"
 			else
-				render :edit
+				redirect_to admin_notices_path,:notice => "更新失败!"
 			end
 		end
 
 		def destroy
-			@notice = Notice.find(params[:id])
 			if @notice.delete
 				redirect_to admin_notices_path,:notice => "删除成功!"
 			else
