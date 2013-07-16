@@ -1,5 +1,7 @@
 ExperimentalCenter::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
+
   devise_for :users
   namespace :admin do
     root :to => 'home#index'
@@ -7,7 +9,7 @@ ExperimentalCenter::Application.routes.draw do
     resources :users
   end
 
-  resources :notices,only: [:index]
+  resources :notices,only: [:index,:show]
 
 
   # The priority is based upon order of creation:

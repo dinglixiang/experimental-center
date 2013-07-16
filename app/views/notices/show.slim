@@ -1,0 +1,9 @@
+div class="container"
+	div class="row-fluid"
+		.span12 align="center" style="margin-top:20px;"
+			h4 
+			  = @notice.title
+			span class="label" #{t('system.author')}: #{ @notice.author}&nbsp;&nbsp;&nbsp;&nbsp;	发布时间： #{@notice.created_at.strftime("%Y-%m-%d")}
+			hr  color="#8E8E8E" SIZE="3"
+		.span10
+			= @notice.content.to_s.html_safe

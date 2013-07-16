@@ -1,5 +1,6 @@
 = simple_form_for @notice,url: admin_notice_path(@notice) do |f|
   = f.input :title
   = f.input :author
-  = f.input :content
+  = f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }
+  br
   = f.submit "更新",class: "btn"

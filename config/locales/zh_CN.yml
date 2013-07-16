@@ -2,9 +2,11 @@ zh_CN:
   system:
     title: 艺术教学实验中心
     notice: 通知管理
+    author: 作者
   simple_form:
     labels:
       notice:
         title: 标题
         content: 内容
         author: 作者
+  
