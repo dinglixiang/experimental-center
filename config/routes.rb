@@ -6,11 +6,16 @@ ExperimentalCenter::Application.routes.draw do
   namespace :admin do
     root :to => 'home#index'
     resources :notices
+    resources :devices
+    resources :sites
     resources :users
+    resources :rules
   end
 
   resources :notices,only: [:index,:show]
-
+  resources :devices,only: [:index]
+  resources :sites,only: [:index]
+  resources :rules,only: [:index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

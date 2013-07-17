@@ -5,7 +5,7 @@ html
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  body
+  body#body
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
@@ -16,15 +16,14 @@ html
                 strong.text-info=t('system.title')
             span.divider-vertical
               ul class="nav"                 
-                li = link_to '设备管理','#'
-                li = link_to '场地管理','#'
-                li = link_to '规章制度','#'
+                li = link_to '设备管理',admin_devices_path
+                li = link_to '场地管理',admin_sites_path
+                li = link_to '规章制度',admin_rules_path
                 li = link_to '视频共享','#'
                 li = link_to '通知管理',admin_notices_path 
               ul class="nav pull-right" 
                 li = link_to '网站首页',root_path                  
                 li = link_to '退出',destroy_user_session_path,:method => 'delete',:class => 'pull-right'
-    = flash[:notice]
     .container style="margin-top:60px;"
       .container-fluid
         .row-fluid

@@ -1,0 +1,5 @@
+= simple_form_for @site,url: admin_sites_path(@site) do |f|
+  = f.input :name
+  = f.input :description
+  = f.input :state
+  = f.submit "提交",class: "btn"

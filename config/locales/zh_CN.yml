@@ -3,10 +3,19 @@ zh_CN:
     title: 艺术教学实验中心
     notice: 通知管理
     author: 作者
+    device: 设备管理
+    site:   场地管理
   simple_form:
     labels:
       notice:
         title: 标题
         content: 内容
         author: 作者
-  
+      device:
+        name: 设备名称
+        type: 设备类型
+        remain: 设备剩余量
+      site:
+        name: 场地名称
+        description: 场地描述
+        state: 场地状态

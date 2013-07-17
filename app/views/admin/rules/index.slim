@@ -1,0 +1,11 @@
+- if @rule.nil? 
+  h5 
+  	span = "您还未添加任何规章制度信息，请 "
+  	= link_to "点击添加", new_admin_rule_path
+- else
+	= simple_form_for @rule,url: admin_rule_path(@rule) do |f|
+	  = f.input :title
+	  = f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }
+	  br
+	  = f.submit "更新",class: "btn"
+	

@@ -1,0 +1,5 @@
+= simple_form_for @rule,url: admin_rules_path(@rule) do |f|
+	= f.input :title
+	= f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }
+	br
+	= f.submit "提交",class: "btn"
