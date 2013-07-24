@@ -4,5 +4,7 @@ class Device
   field :name, type: String
   field :type, type: String
   field :remain, type: String
-  #field :logo, type: String
+  field :image, type: String
+
+  mount_uploader :image, ImageUploader
 end

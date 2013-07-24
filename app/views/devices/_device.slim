@@ -1,0 +1,9 @@
+tr
+  td.span2 = image_tag device.image_url(:thumb)
+  td = device.name
+  td = device.type
+  td = device.remain
+  td 
+    br
+    = button_to "预约",new_dorder_path,class: "btn"
+

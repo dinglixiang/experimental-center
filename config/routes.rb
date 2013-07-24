@@ -10,8 +10,12 @@ ExperimentalCenter::Application.routes.draw do
     resources :sites
     resources :users
     resources :rules
+    resources :dorders
+    resources :sorders
   end
 
+  resources :dorders
+  resources :sorders
   resources :notices,only: [:index,:show]
   resources :devices,only: [:index]
   resources :sites,only: [:index]

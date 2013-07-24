@@ -1,0 +1,11 @@
+= simple_form_for @dorder,url: admin_dorders_path(@dorder) do |f|
+	= f.input :applicant
+	= f.input :tel
+	= f.input :usetime
+	= f.input :usereason, :input_html => { :style => "height:80px" }, as: :text
+	= f.input :device_name
+	= f.input :opinion
+	= f.input :returntime
+	= f.input :situation
+	= f.input :keeper
+	= f.submit "提交", class: "btn"

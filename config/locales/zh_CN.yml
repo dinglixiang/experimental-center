@@ -5,6 +5,8 @@ zh_CN:
     author: 作者
     device: 设备管理
     site:   场地管理
+    dorder: 设备预约
+    sorder: 场地预约
   simple_form:
     labels:
       notice:
@@ -15,7 +17,22 @@ zh_CN:
         name: 设备名称
         type: 设备类型
         remain: 设备剩余量
+        image: 设备图片
+        remote_image_url: 图片URL
       site:
         name: 场地名称
         description: 场地描述
         state: 场地状态
+      rule:
+        title: 标题
+        content: 内容
+      dorder:
+        applicant: 申请人 
+        tel: 联系方式
+        usetime: 使用时间
+        usereason: 使用原因
+        device_name: 设备名称
+        opinion: 艺术教学实验中心意见
+        returntime: 归还时间
+        situation: 设备归还检查情况 
+        keeper: 外借期间设备保管人

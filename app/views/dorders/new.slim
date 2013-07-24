@@ -1,0 +1,19 @@
+div class="container2"
+  div class="center_content"
+    div class="left_nav"
+      ul
+        li = link_to "实验设备",'#'
+        li = link_to "预约情况",'#'
+        li = link_to "使用情况",'#'
+	div class="right_content"
+	  div class="logoer"
+	    = image_tag 'device.gif'
+	  br
+      = simple_form_for @dorder,url: new_dorder_path do |f|
+        = f.input :applicant
+        = f.input :tel, placeholder: '正在使用的联系方式'
+        = f.input :usetime
+        = f.input :usereason, as: :text, input_html: { style: "height: 50px;"}
+        = f.input :device_name
+        = f.input :keeper
+        = f.submit "提交", class: "btn"

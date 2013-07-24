@@ -1,5 +1,7 @@
-= simple_form_for @device,url: admin_devices_path(@device) do |f|
+= simple_form_for @device,:inout_html => {:multipart => true},url: admin_devices_path(@device) do |f|
   = f.input :name
   = f.input :type
   = f.input :remain
+  = f.input :image
+  br
   = f.submit "提交",class: "btn"

@@ -15,9 +15,16 @@ html
               a href= admin_root_path title="回首页"
                 strong.text-info=t('system.title')
             span.divider-vertical
-              ul class="nav"                 
-                li = link_to '设备管理',admin_devices_path
-                li = link_to '场地管理',admin_sites_path
+              ul class="nav"
+                li = link_to '设备预约',admin_dorders_path
+                li = link_to '场地预约',admin_sorders_path                                 
+                li.dropdown
+                  a> class="dropdown-toggle" data-toggle="dropdown" href="#"
+                    |  硬件设施管理
+                    b class="caret"
+                  ul class="dropdown-menu"
+                    li = link_to '设备管理',admin_devices_path
+                    li = link_to '场地管理',admin_sites_path               
                 li = link_to '规章制度',admin_rules_path
                 li = link_to '视频共享','#'
                 li = link_to '通知管理',admin_notices_path 

@@ -6,6 +6,7 @@ table class="table table-bordered table-hover"
 	thead
 		tr
 			th.index_number 序号
+			th 设备图片
 			th 设备名称
 			th 设备类型
 			th 设备剩余量
@@ -13,7 +14,8 @@ table class="table table-bordered table-hover"
 	tbody
 	  - @devices.each_with_index do |device,index|
 	  	tr
-	  	  td = index = index+1 
+	  	  td = index = index+1
+	  	  td = image_tag device.image_url(:thumb) if device.image? 
 	  	  td = device.name	  	  
 	  	  td = device.type
 	  	  td = device.remain
