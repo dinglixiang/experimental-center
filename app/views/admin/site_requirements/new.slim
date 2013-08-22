@@ -1,0 +1,5 @@
+= simple_form_for @site_requirement,url: admin_site_requirements_path(@site_requirement) do |f|
+	= f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }
+	br
+	= f.submit "提交",class: "btn"
+

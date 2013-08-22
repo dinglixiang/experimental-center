@@ -1,0 +1,2 @@
+module SiteRequirementsHelper
+end

@@ -1,5 +1,9 @@
 class SitesController < ApplicationController
-	def index
-		@
-	end
+  def index
+    @sites = Site.all	
+  end
+
+  def requirement 
+    @site_requirement = SiteRequirement.first
+  end
 end

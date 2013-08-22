@@ -9,6 +9,7 @@ table class="table table-bordered table-hover"
 			th 标题
 			th 作者
 			th 创建时间
+			th 审核状态 
 			th 操作
 	tbody
 	  - @notices.each_with_index do |notice,index|
@@ -17,7 +18,12 @@ table class="table table-bordered table-hover"
 	  	  td = notice.title	  	  
 	  	  td = notice.author
 	  	  td = notice.created_at().strftime('%Y-%m-%d %H:%M:%S')
-	  	  td
-		  	  = link_to "编辑", edit_admin_notice_path(notice)
-	          ||
-	          = link_to "删除", admin_notice_path(notice) , method: :delete, data: { confirm: '确定此操作吗？' }	
+	  	  td = notice.pass_state
+	  	  td 
+           = link_to "审核通过",pass_admin_notices_path(:id => notice.id)
+           ||
+           = link_to "不通过",unpass_admin_notices_path(:id => notice.id)
+           ||
+           = link_to "编辑",edit_admin_notice_path(notice)
+           ||
+           = link_to "删除", admin_notice_path(notice) , method: :delete, data: { confirm: '确定此操作吗？' }	

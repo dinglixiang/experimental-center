@@ -1,0 +1,15 @@
+div class="container2"
+  div class="center_content"
+    div class="left_nav"
+      ul
+        li = link_to "实验设备", devices_path
+        li = link_to "预约情况", dorders_path
+        li = link_to "使用情况",'#'
+	div class="right_content"
+	  div class="logoer"
+	    = image_tag 'device.gif'
+      table class="table"
+        - @dorders.each do |order|
+          tr
+            td.span6 =link_to "#{order.applicant} 预约 #{order.device_name} #{order.opinion}",order
+            td = order.updated_at().strftime('%Y-%m-%d %H:%M:%S')

@@ -1,8 +1,13 @@
 tr
-  td.span2 = image_tag device.image_url(:thumb)
-  td = device.name
-  td = device.type
-  td = device.remain
-  td 
+  td = image_tag site.image_url(:thumb)
+  td.span3
+    = site.name
     br
-    = button_to "预约",'#',class: "btn"
+    = site.description
+  td = site.state
+  td.span2 
+    br
+    - if site.state =="空闲"
+      = link_to "预约",new_sorder_path(:site_id => site.id),class: "btn"
+    - else
+      = link_to "预约",'#',class: "btn disabled" 

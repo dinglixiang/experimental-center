@@ -1,0 +1,44 @@
+div class="container2"
+  div class="center_content"
+    div class="left_nav"
+      ul
+        li = link_to "场地设施", sites_path
+        li = link_to "预约情况", sorders_path
+        li = link_to "场地要求", requirement_sites_path
+	div class="right_content"
+	  div class="logoer"
+	    = image_tag 'site.gif'
+      h4 场地申请表
+      table style="width:50%;" border="1"
+        tr style="height:50px;"
+          td 申请人
+          td = @sorder.applicant
+          td 联系方式
+          td = @sorder.tel
+        tr style="height:50px;" 
+          td colspan="2" 使用时间
+          td colspan="2" = @sorder.usetime
+        tr style="height:50px;" 
+          td colspan="2" 长时间借用原因
+          td colspan="2" = @sorder.usereason
+        tr style="height:50px;" 
+          td colspan="2" 场地名称
+          td colspan="2" = @sorder.site_name
+        tr style="height:50px;" 
+          td colspan="2" 艺术教学实验中心意见
+          td colspan="2" = @sorder.opinion
+        tr style="height:50px;" 
+          td colspan="2" 归还时间
+          td colspan="2" = @sorder.returntime
+        tr style="height:50px;" 
+          td colspan="2" 设备归还检查情况
+          td colspan="2" = @sorder.situation
+        tr style="height:50px;" 
+          td colspan="2" 外借期间设备保管人
+          td colspan="2" = @sorder.keeper
+      br
+      p style="width:50%;"
+        |注：为了加强我院设备类固定资产的管理，提高使用效率，保证教学工作与学生
+        |活动的顺利进行，使用过程中应严格按照操作规范操作，使用不当造成的设备遗
+        |失或损坏，将依照学院相关规定赔偿！
+      

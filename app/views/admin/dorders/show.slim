@@ -1,1 +1,35 @@
-show.slim
+h4
+  i.icon-list-alt
+  span.text-info = link_to t('system.dorder'),admin_dorders_path
+table style="width:50%;" border="1"
+  tr style="height:50px;"
+    td 申请人
+    td = @dorder.applicant
+    td 联系方式
+    td = @dorder.tel
+  tr style="height:50px;" 
+    td colspan="2" 使用时间
+    td colspan="2" = @dorder.usetime
+  tr style="height:50px;" 
+    td colspan="2" 长时间借用原因
+    td colspan="2" = @dorder.usereason
+  tr style="height:50px;" 
+    td colspan="2" 设备名称
+    td colspan="2" = @dorder.device_name
+  tr style="height:50px;" 
+    td colspan="2" 艺术教学实验中心意见
+    td colspan="2" = @dorder.opinion
+  tr style="height:50px;" 
+    td colspan="2" 归还时间
+    td colspan="2" = @dorder.returntime
+  tr style="height:50px;" 
+    td colspan="2" 设备归还检查情况
+    td colspan="2" = @dorder.situation
+  tr style="height:50px;" 
+    td colspan="2" 外借期间设备保管人
+    td colspan="2" = @dorder.keeper
+br
+p style="width:50%;"
+  |注：为了加强我院设备类固定资产的管理，提高使用效率，保证教学工作与学生
+  |活动的顺利进行，使用过程中应严格按照操作规范操作，使用不当造成的设备遗
+  |失或损坏，将依照学院相关规定赔偿！

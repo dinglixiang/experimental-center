@@ -1,0 +1,14 @@
+div class="container2"
+  div class="center_content"
+    div class="left_nav"
+      ul
+        li = link_to "场地设施", sites_path
+        li = link_to "预约情况", sorders_path
+        li = link_to "场地要求", requirement_sites_path
+	div class="right_content"
+	  div class="logoer"
+	    = image_tag 'site.gif'
+	    br
+      br
+      = @site_requirement.content.html_safe
+

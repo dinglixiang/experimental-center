@@ -2,20 +2,13 @@ div class="container2"
   div class="center_content"
     div class="left_nav"
       ul
-        li = link_to "实验设备",'#'
-        li = link_to "预约情况",'#'
-        li = link_to "使用情况",'#'
+        li = link_to "场地设施", sites_path
+        li = link_to "预约情况", sorders_path
+        li = link_to "场地要求", requirement_sites_path
 	div class="right_content"
 	  div class="logoer"
-	    = image_tag 'device.gif'
+	    = image_tag 'site.gif'
 	  br
 	  table class="table table-striped"
-	    thead
-	    	tr
-	    	  th 
-	    	  th 设备名称
-	    	  th 设备类型
-	    	  th 设备剩余量
-	    	  th 
 	    tbody
-	      = render @devices
+	      = render @sites

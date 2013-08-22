@@ -2,7 +2,13 @@
 source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.13'
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
+gem 'kaminari'
+gem "mongoid-simple-tags"
+gem "settingslogic"
 gem 'jquery-rails'
+gem "spreadsheet"
 gem "mongoid", "~> 3.0.0"
 gem "bson_ext"
 gem 'slim'

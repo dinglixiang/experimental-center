@@ -1,0 +1,16 @@
+div class="container2"
+  div class="center_content"
+    div class="left_nav"
+      ul
+        li = link_to "场地设施", sites_path
+        li = link_to "预约情况", sorders_path
+        li = link_to "场地要求", requirement_sites_path
+	div class="right_content"
+	  div class="logoer"
+	    = image_tag 'site.gif'
+      table class="table"
+        - @sorders.each do |order|
+          tr
+            td.span6 =link_to "#{order.applicant} 预约 #{order.site_name} #{order.opinion}",order
+            td = order.updated_at().strftime('%Y-%m-%d %H:%M:%S')
+

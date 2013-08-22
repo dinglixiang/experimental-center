@@ -1,0 +1,24 @@
+div class="container2"
+  div class="center_content"
+    div class="left_nav"
+      ul
+	div class="right_content"
+	  div class="logoer"
+	    = image_tag 'device.gif'
+	  table class="table table-striped"
+	    thead
+	    	tr
+	    	  th.index_number 序号 
+	    	  th 设备名称
+	    	  th 设备类型
+	    	  th 设备剩余量
+	    	  th 
+	    tbody
+        - @devices.each_with_index do |device,index|
+          tr
+            td = index=index+1
+            td = device.name
+            td = device.type
+            td = device.remain
+            td = link_to "说明书下载",'#'
+

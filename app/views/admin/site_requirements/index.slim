@@ -1,0 +1,10 @@
+- if @site_requirement.nil? 
+  h5 
+  	span = "您还未添加任何场地要求的信息，请 "
+  	= link_to "点击添加", new_admin_site_requirement_path
+- else
+	= simple_form_for @site_requirement,url: admin_site_requirement_path(@site_requirement) do |f|
+	  = f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }
+	  br
+	  = f.submit "更新",class: "btn"
+

@@ -5,20 +5,44 @@ ExperimentalCenter::Application.routes.draw do
   devise_for :users
   namespace :admin do
     root :to => 'home#index'
-    resources :notices
+    resources :notices do
+      collection do
+        get "pass"
+        get "unpass"
+      end
+    end
+    resources :site_requirements
     resources :devices
     resources :sites
     resources :users
     resources :rules
-    resources :dorders
-    resources :sorders
+    resources :dorders do
+      collection do
+        get "pass"
+        get "unpass"
+      end
+    end
+    resources :sorders do
+      collection do
+        get "pass"
+        get "unpass"
+      end
+    end
   end
 
   resources :dorders
   resources :sorders
   resources :notices,only: [:index,:show]
-  resources :devices,only: [:index]
-  resources :sites,only: [:index]
+  resources :devices,only: [:index] do
+    collection do
+      get "list"
+    end
+  end
+  resources :sites,only: [:index] do
+    collection do
+      get "requirement"
+      end
+  end
   resources :rules,only: [:index]
 
   # The priority is based upon order of creation:

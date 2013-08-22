@@ -4,4 +4,8 @@ class DevicesController < ApplicationController
 		@devices = Device.all
 	end
 
+  def list
+    @devices = Device.all
+  end
+
 end

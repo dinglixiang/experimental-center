@@ -1,0 +1,15 @@
+h4
+  i.icon-list-alt
+  span.text-info =t('system.today_dorder')
+table.table.table-hover
+  thead
+    tr
+      th.index_number 序号
+      th 预约人
+      th 提交时间
+  tbody
+    - @dorders.each_with_index do |order,index|
+      tr
+        td = index=index+1
+        td = order.applicant
+        td = order.created_at().strftime('%Y-%m-%d %H:%M:%S')
