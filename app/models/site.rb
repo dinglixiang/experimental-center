@@ -11,6 +11,8 @@ class Site
   
   has_many :sorders
 
+  validates_presence_of :name,:description,:state,:image
+
   def self.selectstate
      ["忙碌","空闲"]
   end

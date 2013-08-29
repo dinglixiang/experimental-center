@@ -16,6 +16,9 @@ class Sorder
 
   belongs_to :site
 
+  validates_presence_of :applicant,:tel,:usetime,:usereason
+  validates_format_of :tel, :with =>  /^1[3|4|5|8]\d{9}$/, message: "联系方式格式不正确" 
+
   STATUS =["未审核","审核通过","未通过","已审核"]
 
   def pass_state

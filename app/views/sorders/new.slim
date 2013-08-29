@@ -9,7 +9,7 @@ div class="container2"
 	  div class="logoer"
 	    = image_tag 'site.gif'
 	  br
-      = simple_form_for @sorder,url: sorders_path,:method => :post do |f|
+      = simple_form_for @sorder,:validate => true,url: sorders_path,:method => :post do |f|
         = f.input :applicant
         = f.input :tel, placeholder: '正在使用的联系方式'
         = f.input :usetime

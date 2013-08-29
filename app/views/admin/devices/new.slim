@@ -1,4 +1,4 @@
-= simple_form_for @device,:input_html => {:multipart => true},url: admin_devices_path(@device) do |f|
+= simple_form_for @device,:validate => true,:input_html => {:multipart => true},url: admin_devices_path(@device) do |f|
   = f.input :name
   = f.input :type
   = f.input :remain

@@ -9,4 +9,6 @@ class Device
   mount_uploader :image, ImageUploader
 
   has_many :dorders
+
+  validates_presence_of :name,:type,:remain,:image
 end

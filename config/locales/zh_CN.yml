@@ -54,6 +54,34 @@ zh_CN:
   mongoid:
     errors:
       models:
+        site:
+          attributes:
+            name:
+              blank: 必填项
+              presence: 必填项
+            description:
+              blank: 必填项
+              presence: 必填项
+            state:
+              blank: 必填项
+              presence: 必填项
+            image:
+              blank: 必填项
+              presence: 必填项
+        device:
+          attributes:
+            name:
+              blank: 必填项
+              presence: 必填项
+            type:
+              blank: 必填项
+              presence: 必填项
+            remain:
+              blank: 必填项
+              presence: 必填项
+            image:
+              blank: 必填项
+              presence: 必填项
         dorder:
           attributes:
             applicant:
@@ -62,10 +90,30 @@ zh_CN:
             usetime:
               blank: 必填项
               presence: 必填项
+            tel:
+              blank: 必填项
+              presence: 必填项
             usereason:
               blank: 必填项
               presence: 必填项
             device_name:
+              blank: 必填项
+              presence: 必填项
+        sorder:
+          attributes:
+            applicant:
+              blank: 必填项
+              presence: 必填项
+            usetime:
+              blank: 必填项
+              presence: 必填项
+            tel:
+              blank: 必填项
+              presence: 必填项
+            usereason:
+              blank: 必填项
+              presence: 必填项
+            site_name:
               blank: 必填项
               presence: 必填项
 

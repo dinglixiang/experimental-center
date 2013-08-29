@@ -6,6 +6,7 @@ table class="table table-bordered table-hover"
 	thead
 		tr
 			th.index_number 序号
+			th 场地图片
 			th 场地名称
 			th 场地描述
 			th 场地状态
@@ -13,7 +14,8 @@ table class="table table-bordered table-hover"
 	tbody
 	  - @sites.each_with_index do |site,index|
 	  	tr
-	  	  td = index = index+1 
+	  	  td = index = index+1
+	  	  td = image_tag site.image_url(:thumb) if site.image? 
 	  	  td = site.name	  	  
 	  	  td = site.description
 	  	  td = site.state

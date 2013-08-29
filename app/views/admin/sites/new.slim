@@ -1,6 +1,7 @@
-= simple_form_for @site,url: admin_sites_path(@site) do |f|
+= simple_form_for @site,:validate => true,url: admin_sites_path(@site) do |f|
   = f.input :name
   = f.input :description, as: :text, input_html: { style: "height: 50px;"}
+  = f.label "场地状态"
   = f.select :state,Site.selectstate
   = f.input :image
   br

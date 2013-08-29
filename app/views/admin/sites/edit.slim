@@ -1,5 +1,8 @@
 = simple_form_for @site,url: admin_site_path(@site) do |f|
   = f.input :name
   = f.input :description
-  = f.input :state
+  = f.label "场地状态"
+  = f.select :state,Site.selectstate
+  = f.input :image
+  br
   = f.submit "更新",class: "btn"
