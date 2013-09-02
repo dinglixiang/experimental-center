@@ -2,13 +2,14 @@
 
 module Admin 
 	class DevicesController < AdminController
+		before_filter :find_device, only: [:show,:edit,:update,:delete]
+
 
 		def index
 			@devices = Device.all
 		end
 
 		def show
-			@device = Device.find(params[:id])
 		end
 
 		def new
@@ -16,7 +17,6 @@ module Admin
 		end
 
 		def edit
-			@device = Device.find(params[:id])
 		end
 
 		def create
@@ -29,7 +29,6 @@ module Admin
 		end	
 
 		def update
-			@device = Device.find(params[:id])
 			if @device.update_attributes(params[:device])
 				redirect_to admin_devices_path,:notice => "更新成功!"
 			else
@@ -38,12 +37,17 @@ module Admin
 		end
 
 		def destroy
-			@device = Device.find(params[:id])
 			if @device.delete
 				redirect_to admin_devices_path,:notice => "删除成功!"
 			else
 				redirect_to admin_devices_path,:notice => "删除失败!"
 			end
 		end
+
+		private
+		def find_device
+			@device = Device.find(params[:id])
+		end
+
 	end
 end
