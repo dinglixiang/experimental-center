@@ -39,7 +39,10 @@ html
             .alert.alert-success
               a> href="#" class="close" data-dismiss="alert" &times;
               = flash[:notice]
-          = flash[:alert]
+          - if flash[:alert]
+            .alert
+              a> href="#" class="close" data-dismiss="alert" &times;
+              = flash[:alert]
           = yield
       .footer
         p.pull-right

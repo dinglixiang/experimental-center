@@ -1,8 +1,7 @@
 #encoding:utf-8
-
 module Admin 
 	class DordersController < AdminController
-    before_filter :find_dorder,only: [:edit,:show,:update,:destroy,:pass,:unpass]
+  before_filter :find_dorder,only: [:edit,:show,:update,:destroy,:pass,:unpass]
 
 	def index
 		@dorders = Dorder.all
@@ -56,7 +55,7 @@ module Admin
       @dorder.state = 3
       @dorder.opinion = "审核未通过"
       @dorder.update_attributes(params[:dorder])
-      redirect_to admin_dorders_path,:notice => "审核未通过"
+      redirect_to admin_dorders_path,:alert => "审核未通过"
     end
 
     private
