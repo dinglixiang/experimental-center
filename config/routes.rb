@@ -20,12 +20,16 @@ ExperimentalCenter::Application.routes.draw do
       collection do
         get "pass"
         get "unpass"
+        get "revert"
+        put "return"
       end
     end
     resources :sorders do
       collection do
         get "pass"
         get "unpass"
+        get "revert"
+        put "return"
       end
     end
   end

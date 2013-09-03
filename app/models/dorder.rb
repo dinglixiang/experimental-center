@@ -20,7 +20,7 @@ class Dorder
 
   belongs_to :device
 
-  STATUS =["未审核","审核通过","未通过","已审核"]
+  STATUS =["未审核","审核通过","未通过","已归还"]
 
   def pass_state
     if state == 1

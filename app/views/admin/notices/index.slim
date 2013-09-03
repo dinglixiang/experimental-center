@@ -18,7 +18,7 @@ table class="table table-bordered table-hover"
 	  	  td = notice.title	  	  
 	  	  td = notice.author
 	  	  td = notice.created_at().strftime('%Y-%m-%d %H:%M:%S')
-	  	  td = notice.pass_state
+	  	  td = raw notice.pass_state
 	  	  td 
            = link_to "审核通过",pass_admin_notices_path(:id => notice.id)
            ||

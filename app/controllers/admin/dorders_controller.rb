@@ -1,7 +1,7 @@
 #encoding:utf-8
 module Admin 
 	class DordersController < AdminController
-  before_filter :find_dorder,only: [:edit,:show,:update,:destroy,:pass,:unpass]
+  before_filter :find_dorder,only: [:edit,:show,:update,:destroy,:pass,:unpass,:revert,:return]
 
 	def index
 		@dorders = Dorder.all
@@ -30,7 +30,7 @@ module Admin
 		if @dorder.update_attributes(params[:dorder])
 			redirect_to admin_dorders_path,:notice => "更新成功"
 		else
-			render :edit
+			redirect_to admin_dorders_path,:notice => "更新失败"
 		end
 	end
 	def destroy
@@ -41,7 +41,7 @@ module Admin
     def pass
      # @dorder.device.remain -= 1
     #  @device = @dorder.device
-      @dorder.state=2
+      @dorder.state = 2
       @dorder.opinion = "审核通过"
       @dorder.update_attributes(params[:dorder])
       @device = Device.find(@dorder.device_id)
@@ -56,6 +56,20 @@ module Admin
       @dorder.opinion = "审核未通过"
       @dorder.update_attributes(params[:dorder])
       redirect_to admin_dorders_path,:alert => "审核未通过"
+    end
+
+    def revert
+    end
+
+    def return
+    	@dorder.state,@dorder.opinion = 4,"已归还"
+    	@device = Device.find(@dorder.device_id)
+    	@device.remain += 1  
+    	if @dorder.update_attributes(params[:dorder]) && @device.update_attributes(params[:device])
+				redirect_to admin_dorders_path,:notice => "归还成功"
+			else
+				redirect_to admin_dorders_path,:notice => "归还失败"
+			end
     end
 
     private

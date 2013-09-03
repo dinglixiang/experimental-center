@@ -2,10 +2,15 @@
 
 module Admin 
 	class NoticesController < AdminController
+		before_filter :find_notice,only: [:show,:edit,:update,:destroy,:pass,:unpass]
     
 		def index
 			@notices = Notice.all
 		end
+
+		def show
+		end
+
 		def new
 			@notice = Notice.new
 		end
@@ -13,21 +18,19 @@ module Admin
 		def create
 			@notice = Notice.new(params[:notice])
 			if @notice.save
-				redirect_to admin_notices_path,:notice => "success"
+				redirect_to admin_notices_path,:notice => "创建成功"
 			else
 				render :new
 			end
 		end
 		def edit
-			@notice = Notice.find(params[:id])
 		end
 
 		def update
-			@notice = Notice.find(params[:id])
 			if @notice.update_attributes(params[:notice])
 				redirect_to admin_notices_path,:notice => "更新成功!"
 			else
-				redirect_to admin_notices_path,:notice => "更新失败!"
+				redirect_to admin_notices_path,:alert => "更新失败!"
 			end
 		end
 
@@ -35,27 +38,25 @@ module Admin
 			if @notice.delete
 				redirect_to admin_notices_path,:notice => "删除成功!"
 			else
-				redirect_to admin_notices_path,:notice => "删除失败!"
+				redirect_to admin_notices_path,:alert => "删除失败!"
 			end
 		end
 
-        def pass
-          @notice = Notice.find(params[:id])
-          @notice.state = true
-          @notice.update_attributes(params[:notice])
-          redirect_to admin_notices_path
-        end
+    def pass
+      @notice.state = 2
+      @notice.update_attributes(params[:notice])
+      redirect_to admin_notices_path
+    end
 
-        def unpass
-         @notice = Notice.find(params[:id])
-         @notice.state = false 
-         @notice.update_attributes(params[:notice])
-         redirect_to admin_notices_path
-        end
+    def unpass
+      @notice.state = 3 
+      @notice.update_attributes(params[:notice])
+      redirect_to admin_notices_path
+    end
 
-       private
-       def find_by_id
-         @notice = Notice.find(params[:id])
-       end
+    private
+    def find_notice
+      @notice = Notice.find(params[:id])
+    end
 	end
 end
