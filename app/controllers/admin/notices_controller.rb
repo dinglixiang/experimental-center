@@ -5,7 +5,9 @@ module Admin
 		before_filter :find_notice,only: [:show,:edit,:update,:destroy,:pass,:unpass]
     
 		def index
-			@notices = Notice.all
+			@pass_notices = Notice.where(state: 2).page(params[:page])
+			@unpass_notices = Notice.where(state: 3).page(params[:page])
+			@unaudited_notices = Notice.where(state: 1).page(params[:page])
 		end
 
 		def show
@@ -43,13 +45,13 @@ module Admin
 		end
 
     def pass
-      @notice.state = 2
+      @notice.state,@notice.tag_list = 2,"审核通过"
       @notice.update_attributes(params[:notice])
       redirect_to admin_notices_path
     end
 
     def unpass
-      @notice.state = 3 
+      @notice.state,@notice.tag_list = 3,"未通过" 
       @notice.update_attributes(params[:notice])
       redirect_to admin_notices_path
     end

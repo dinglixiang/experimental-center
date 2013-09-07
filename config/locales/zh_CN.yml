@@ -9,6 +9,13 @@ zh_CN:
     sorder: 场地预约
     today_dorder: 今日设备预约申请
     today_sorder: 今日场地预约申请
+  views:
+    pagination:
+      first: "&laquo; 首页"
+      last: "尾页 &raquo;"
+      previous: "&lsaquo; 上一页"
+      next: "下一页 &rsaquo;"
+      truncate: "&hellip;"
   simple_form:
     labels:
       site_requirement:

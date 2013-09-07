@@ -2,10 +2,12 @@ class Notice
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Document::Taggable
-  
+
+  paginates_per 10
   field :title, type: String
   field :content, type: String
   field :author, type: String
+  field :tag,type: String
   field :state, type: Integer,:default => 1
 
   STATUS =["未审核","审核通过","未通过","已审核"]
@@ -22,7 +24,7 @@ class Notice
     end
   end
 
-  def self.selecttag
-     ["学院新闻","通知公告"]
-  end
+  # def self.selecttag
+  #    ["学院新闻","通知公告"]
+  # end
 end
