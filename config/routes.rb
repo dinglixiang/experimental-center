@@ -2,7 +2,7 @@ ExperimentalCenter::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
 
-  devise_for :users
+  #devise_for :users
   namespace :admin do
     root :to => 'home#index'
     resources :notices do
@@ -33,7 +33,7 @@ ExperimentalCenter::Application.routes.draw do
       end
     end
   end
-
+  resources :sessions
   resources :dorders
   resources :sorders
   resources :notices,only: [:index,:show]

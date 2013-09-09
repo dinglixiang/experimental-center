@@ -1,41 +1,33 @@
 class User
   include Mongoid::Document
-  rolify
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
 
-  ## Database authenticatable
-  field :email,              :type => String, :default => ""
-  field :encrypted_password, :type => String, :default => ""
+  field :login,type: String
+  field :hashed_password,type: String
+  field :salt,type: String
+
+  def password
+    @password
+  end
+
+  def password=(pass)
+    return unless pass
+    @password=pass
+    generate_password(pass)
+  end
+
+  def self.authentication(login,password)
+    user = User.find_by login: login
+    if user && Digest::SHA256.hexdigest(password + user.salt)==user.hashed_password
+      return user
+    end
+    false
+  end
+
+  private 
+  def generate_password(pass)
+    self.salt = Array.new(10){rand(1024).to_s(36)}.join
+    self.hashed_password = Digest::SHA256.hexdigest(pass+salt)
+  end
+
   
-  ## Recoverable
-  field :reset_password_token,   :type => String
-  field :reset_password_sent_at, :type => Time
-
-  ## Rememberable
-  field :remember_created_at, :type => Time
-
-  ## Trackable
-  field :sign_in_count,      :type => Integer, :default => 0
-  field :current_sign_in_at, :type => Time
-  field :last_sign_in_at,    :type => Time
-  field :current_sign_in_ip, :type => String
-  field :last_sign_in_ip,    :type => String
-
-  ## Confirmable
-  # field :confirmation_token,   :type => String
-  # field :confirmed_at,         :type => Time
-  # field :confirmation_sent_at, :type => Time
-  # field :unconfirmed_email,    :type => String # Only if using reconfirmable
-
-  ## Lockable
-  # field :failed_attempts, :type => Integer, :default => 0 # Only if lock strategy is :failed_attempts
-  # field :unlock_token,    :type => String # Only if unlock strategy is :email or :both
-  # field :locked_at,       :type => Time
-
-  ## Token authenticatable
-  # field :authentication_token, :type => String
 end
