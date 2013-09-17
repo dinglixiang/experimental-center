@@ -15,6 +15,7 @@ ExperimentalCenter::Application.routes.draw do
     resources :devices
     resources :sites
     resources :users
+    resources :videos
     resources :rules
     resources :dorders do
       collection do
@@ -30,6 +31,7 @@ ExperimentalCenter::Application.routes.draw do
     end
   end
 
+  resources :videos
   resources :dorders
   resources :sorders
   resources :notices,only: [:index,:show]

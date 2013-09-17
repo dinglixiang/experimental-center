@@ -4,7 +4,6 @@ module Admin
 	class DevicesController < AdminController
 		before_filter :find_device, only: [:show,:edit,:update,:delete]
 
-
 		def index
 			@devices = Device.all
 		end

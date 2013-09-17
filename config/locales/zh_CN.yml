@@ -7,6 +7,7 @@ zh_CN:
     site:   场地管理
     dorder: 设备预约
     sorder: 场地预约
+    video: 视频管理
     today_dorder: 今日设备预约申请
     today_sorder: 今日场地预约申请
   simple_form:
@@ -51,6 +52,10 @@ zh_CN:
         returntime: 归还时间
         situation: 设备归还检查情况 
         keeper: 外借期间场地保管人
+      video:
+        name: 视频名
+        vimage: 视频图片
+        video: 视频
   mongoid:
     errors:
       models:
