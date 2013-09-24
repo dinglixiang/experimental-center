@@ -4,7 +4,9 @@ module Admin
   before_filter :find_dorder,only: [:edit,:show,:update,:destroy,:pass,:unpass,:revert,:return]
 
 	def index
-		@dorders = Dorder.all
+		@pass_dorders = Dorder.where(state: 2)
+		@unaudited_dorders = Dorder.where(state: 1)
+		@unpass_dorders = Dorder.where(state: 3)
 	end
 
 	def show

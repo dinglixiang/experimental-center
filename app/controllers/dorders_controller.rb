@@ -18,12 +18,12 @@ class DordersController < ApplicationController
     @dorder = Dorder.new(params[:dorder])
     @dorder.opinion ="未审核" 
     @dorder.device_id=session[:device_id]
-    #render json: @dorder
+    render json: @dorder
     session[:device_id]=nil
     if @dorder.save 
-      redirect_to devices_path,:notice => "success!"
+     # redirect_to devices_path,:notice => "success!"
     else
-      render :new
+      #render :new
     end
   end
 end

@@ -10,8 +10,5 @@
  *
  *= require_self
  *= require bootstrap
- *= require bootstrap-datetimepicker
  *= require home.css.scss
- *= require index.css
- *= require scaffolds.css.scss
  */

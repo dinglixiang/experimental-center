@@ -5,7 +5,7 @@ class Dorder
   
   field :applicant
   field :tel
-  field :usetime
+  field :usetime,type: String
   field :usereason
   field :device_name
   field :opinion 

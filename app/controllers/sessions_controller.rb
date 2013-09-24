@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-	#sign in
+	#layout false
+	#登录
 	def new
 	end
 

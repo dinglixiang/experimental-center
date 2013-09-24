@@ -4,6 +4,10 @@ ul{list-style-type:none;}
 a{text-decoration:none;}
 /*全局变量定义*/
 
+.container2{
+	margin-right:auto;
+	margin-left: auto;
+}
 
 .container-all{width:964px; height:auto; margin:0 auto; background:#fff; background:url(body.gif) repeat-y; padding:0 2px; border-top:1px solid #fff;}
 /*整体container*/

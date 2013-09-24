@@ -1,1 +1,27 @@
-_unaudited.slim
+table class="table table-bordered table-hover"
+	thead
+		tr
+			th.index_number 序号
+			th.span2 预约设备
+			th 预约人 
+			th 联系方式 
+			th 使用时间
+			th 审核状态 
+			th 操作
+	tbody
+	  - @unaudited_dorders.each_with_index do |order,index|
+	  	tr
+	  	  td = index = index+1 
+	  	  td = link_to order.device_name,admin_dorder_path(order)
+	  	  td = order.applicant
+	  	  td = order.tel
+	  	  td = order.created_at().strftime('%Y-%m-%d %H:%M:%S')
+	  	  td = raw order.pass_state
+	  	  td
+           = link_to "同意", pass_admin_dorders_path(:id => order.id)
+           ||
+           = link_to "不同意", unpass_admin_dorders_path(:id => order.id)
+           ||
+           = link_to "编辑", edit_admin_dorder_path(order)
+           ||
+           = link_to "删除", admin_dorder_path(order), method: :delete, data: { confirm: '确定此操作吗？' }	

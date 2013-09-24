@@ -4,7 +4,9 @@ module Admin
     before_filter :find_sorder,only: [:show,:update,:destroy,:edit,:pass,:unpass,:revert,:return] 
 
 		def index
-			@sorders = Sorder.all
+			@unaudited_sorders = Sorder.where(state: 1)
+      @pass_sorders = Sorder.where(state: 2)
+      @unpass_sorders = Sorder.where(state: 3)
 		end
 
 		def new

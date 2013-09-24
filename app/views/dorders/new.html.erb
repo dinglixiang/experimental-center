@@ -1,0 +1,68 @@
+<div class="container2">
+  <div class="center_content">
+    <div class="left_nav">
+      <ul>
+        <li><%= link_to "实验设备", devices_path %></li>
+        <li><%= link_to "预约情况", dorders_path %></li>
+        <li><%= link_to "使用情况",'#' %></li>
+      </ul>
+    </div>
+    <div class="right_content">
+      <div class="logoer">
+        <%= image_tag 'device.gif' %>
+      </div>
+      <br />
+      
+      <table>
+        <legend>设备申请表</legend>
+      <%= form_for @dorder,:validate => true,url: dorders_path,:method => :post do |f| %>
+        <tr>
+          <td>申请人：</td>
+          <td><%= f.text_field :applicant %></td>
+        </tr>
+        <tr>
+          <td>联系方式：</td>
+          <td><%= f.text_field :tel, placeholder: 'Mobile Phone' %></td>
+        </tr>
+        <tr>
+          <td>使用时间：</td>
+          <td><div id="datetimepicker1" class="input-append date add-on">
+            <%= f.text_field :usetime,'data-format' => "dd/MM/yyyy hh:mm:ss",type: "text" %>
+            <span class="add-on">
+            <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+          </span>
+        </div></td>
+        </tr>
+        <tr>
+          <td>使用原因：</td>
+          <td><%= f.text_area :usereason, :rows => 3, :cols => 40%></td>
+        </tr>
+        <tr>
+          <td>设备名称：</td>
+          <td><%= f.text_field :device_name,value: @device.name %></td>
+        </tr>
+        <tr>
+          <td>保管人：</td>
+          <td><%= f.text_field :keeper %></td>
+        </tr>
+        <tr><td></td><td><%= f.submit "提交", class: "btn pull-btn"%></td></tr>
+       
+        <% end %>
+        </table>
+        <br>
+        <p style="width:50%;font-size:8px;">
+          注：为了加强我院设备类固定资产的管理，提高使用效率，保证教学工作与学生
+          活动的顺利进行，使用过程中应严格按照操作规范操作，使用不当造成的设备遗
+          失或损坏，将依照学院相关规定赔偿！
+        </p>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    $('#datetimepicker1').datetimepicker({
+      language: 'pt-BR'
+    });
+  });
+</script>

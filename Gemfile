@@ -24,6 +24,7 @@ gem 'carrierwave'
 gem "carrierwave-mongoid", :require => 'carrierwave/mongoid'
 gem "mini_magick"
 gem "ckeditor"
+gem 'bootstrap-datetimepicker-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3' 
