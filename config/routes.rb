@@ -33,7 +33,10 @@ ExperimentalCenter::Application.routes.draw do
       end
     end
   end
-  resources :sessions
+  resources :sessions,only: [:new,:create,:destroy]
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
+
   resources :dorders
   resources :sorders
   resources :notices,only: [:index,:show]

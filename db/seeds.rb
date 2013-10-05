@@ -6,9 +6,30 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(email: "admin@example.com",
-	          password: "123456789",
-	          password_confirmation: "123456789")
+User.create( login: "admin",
+	         password: "123456789",
+	        )
+DEVICE_NAME = ["摄录一体机","摄录一体机","数码单反照相机","数码HD 摄录一体机","专业数码照相机","12米轨道"]
+DEVICE_TYPE = ["SONY PMW-EX1R","SONY HVR-Z5C","佳能EOS 550D","SONY HXR-NX5C","佳能EOS 5D Mark2","飞行船FXC-650MM12"]
+DEVICE_OPEN_URL = ['app/assets/images/SONYPMWEX1R.png','app/assets/images/SONYZ5C.png','app/assets/images/JIANENG550D.jpg','app/assets/images/SONYNX5C.jpg','app/assets/images/JIANENG5D2.jpg','app/assets/images/HUAGUI.jpg']
+DEVICE_REMAIN =[3,4,15,15,1,1]
+
+6.times { |i|
+	Device.create(name: DEVICE_NAME[i-1],
+				type: DEVICE_TYPE[i-1],
+				remain: DEVICE_REMAIN[i-1],
+				image: File.open(DEVICE_OPEN_URL[i-1])
+				)
+}
+# d.image = File.open('app/assets/images/JIANENG5D2.jpg')
+# d.save!
+
+
+Site.create(name: '苹果机房',
+			  description: "这是苹果机房，专门为学院的学生提供计算机使用的平台",
+	          state: "空闲",
+	          image: File.open("app/assets/images/place_03.gif")
+	          )
 
 10.times do 
 Notice.create(title: '软件工程专业教研室党支部深入企业学习',tag: "通知公告",tag_list: "未审核",content: '<p><span style=\"font-family:arial; font-size:14px\">2013年7月2日，软件工程专业教研室党支部到中国石油天然气股份有限公司成都润滑油厂开展&ldquo;向企业学习搞活搞好文化建设，调动员工积极性&rdquo;主题党组织活动。</span><br />\r\n<span style=\"font-family:arial; font-size:14px\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 成都润滑油厂以漫画等形式解读安全文化，让行为变规范，让规范成习惯，给成都市企业安全文化建设树立了标杆。走进厂区，干净整洁、环境优美之风迎面扑来。在厂区办公楼一间会议室里，摆放着一大叠书本。&ldquo;这是我们的文化产品。&rdquo;计划科杨联科长向大家介绍。在调和车间，党员们在一幅《违章操作》漫画前驻足。这幅漫画的作者、调度员王贺说：&ldquo;这事儿就曾发生在我身边，因此创作时信手拈来、一气呵成。&rdquo;。成都润滑油厂的年轻人多，成就了一些共性：阳光、乐观、好动。而在这些共性之下，个性也得到发扬，从而实现了团队价值和自我价值的较好统一。让管理的触角通过行之有效的载体延伸到员工内心，引导员工多思考，是成都润滑油厂自我管理的灵魂和核心动力所在。</span><br />\r\n<span style=\"font-family:arial; font-size:14px\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 我支部党员与企业党员代表进行了座谈，在座谈中我们也确实感觉到企业的文化建设所带来的生产效率提高；我们应该结合当前大学生的特点，在我们的教学工作中学习企业文化建设的特点，更好地调动学生的学习积极性。</span></p>\r\n',author: 'dlx',state: 1)
@@ -24,3 +45,5 @@ Rule.create(title: "艺术教学实验中心规章制度",content: "这是规章
         这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度。
 
         这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度，这是规章制度。")
+
+SiteRequirement.create(content: "这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求，这是场地要求.")

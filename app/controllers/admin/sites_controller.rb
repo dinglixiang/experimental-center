@@ -15,6 +15,7 @@ module Admin
 		def create
 			@site = Site.new(params[:site])
 			if @site.save
+				#render json: @site
 				redirect_to admin_sites_path,:notice => "场地添加成功！"
 			else
 				render :new

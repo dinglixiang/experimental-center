@@ -5,6 +5,8 @@ class User
   field :hashed_password,type: String
   field :salt,type: String
 
+  validates_uniqueness_of :login
+
   def password
     @password
   end
@@ -15,10 +17,9 @@ class User
     generate_password(pass)
   end
 
-  def self.authentication(login,password)
-    user = User.find_by login: login
-    if user && Digest::SHA256.hexdigest(password + user.salt)==user.hashed_password
-      return user
+  def authentication(user,password)
+    if Digest::SHA256.hexdigest(password + user.salt)==user.hashed_password
+      return true
     end
     false
   end
