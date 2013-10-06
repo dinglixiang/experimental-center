@@ -8,7 +8,7 @@ table class="table table-bordered table-hover"
 			th.index_number 序号
 			th 场地图片
 			th 场地名称
-			th 场地描述
+			th.span5 场地描述
 			th 场地状态
 			th 操作
 	tbody
@@ -17,7 +17,13 @@ table class="table table-bordered table-hover"
 	  	  td = index = index+1
 	  	  td = image_tag site.image_url(:thumb) if site.image? 
 	  	  td = site.name	  	  
-	  	  td = site.description
+	  	  td 
+	  	    - if site.description.length > 30 
+	  	      = truncate(site.description,length: 30)
+	  	      | 
+	  	      = link_to_function 'More', "$(this).parent().html('#{escape_javascript site.description}')"
+	  	    - else
+	  	      = site.description
 	  	  td = site.state
 	  	  td
 		  	  = link_to "编辑", edit_admin_site_path(site)

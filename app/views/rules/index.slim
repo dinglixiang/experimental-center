@@ -4,8 +4,15 @@ div class="container2"
       ul
 	div class="right_content"
 	  div class="logoer"
-	    = image_tag 'rule.gif'
+	    = image_tag 'guizhangzhidu.gif'
       br
+
         = @rule.content.html_safe
+
+      - if @rule
+        = @rule.content.html_safe
+      -else
+        = "当前规章制度正在更新中，请耐心等待"
+
 
 

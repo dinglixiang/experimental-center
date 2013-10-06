@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= t('system.title') 
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  body#body
+    .container style="margin-top:30px;"
+      .container-fluid
+        .row-fluid
+          .span12
+            - if flash[:notice]
+              .alert.alert-success
+                a> href="#" class="close" data-dismiss="alert" &times;
+                = flash[:notice]
+            - if flash[:alert]
+              .alert
+                a> href="#" class="close" data-dismiss="alert" &times;
+                = flash[:alert]
+            = yield
+      .footer
+        p.pull-right
+          |艺术教学实验中心 | &copy; 2013 

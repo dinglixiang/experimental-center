@@ -1,0 +1,10 @@
+
+<div id="myElement" align="center">Loading the player...</div>
+
+<script>jwplayer.key="AhPghhyxrmMHSrawRrilmRMpiKjPRCP2YmyB9g==";</script>
+<script type="text/javascript">
+    jwplayer("myElement").setup({
+        file: "<%= @video.video.url%>",
+        image: "<%= @video.vimage.url%>"
+    });
+</script>

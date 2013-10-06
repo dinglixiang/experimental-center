@@ -1,0 +1,26 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+	width: 100%;
+	table-layout: fixed;
+	empty-cells: show;
+	border-collapse: collapse;
+	border: 0 solid #cad9ea;
+	color: #666;
+}
+
+th {
+	height: 30px;
+	overflow: hidden;
+}
+
+td {
+	height: 20px;
+}
+
+td,th {
+	border: 0px solid #cad9ea;
+	padding: 0 1em 0;
+}

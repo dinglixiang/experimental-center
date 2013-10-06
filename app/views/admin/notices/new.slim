@@ -4,6 +4,6 @@
 	= f.input :content, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'} }
 	br
 	= f.label "标签"
-	= f.select :tag_list,Notice.selecttag
+	= f.select :tag,select_tag
 	br
 	= f.submit "提交", class: "btn"

@@ -1,9 +1,9 @@
-<div id="myElement">Loading the player...</div>
-<script>jwplayer.key="AhPghhyxrmMHSrawRrilmRMpiKjPRCP2YmyB9g==";</script>
-<script type="text/javascript">
-    jwplayer("myElement").setup({
-        file: "uploads/video/cars.mp4",
-        image: "uploads/video/cars.png"
-    });
-</script>
 
+
+
+
+<% @videos.each do |video1| %>
+
+<img src="<%= video1.vimage.url%>" style="width:100px;height:60px">
+<%= link_to '播放',video_path(video1)%><br/>
+<% end %>

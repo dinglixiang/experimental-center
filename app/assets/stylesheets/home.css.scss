@@ -2,7 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
+@import 'bootstrap-datetimepicker';
 
+a {
+	color: #000;
+}
+a:hover {
+	color: #ffc40d;
+}
 #body{
 	background:url(bk_body.jpg);
 }
+
+.pull-btn {
+	margin-left: 65%;
+}
+
+.container a {color: #0088cc}
+
+

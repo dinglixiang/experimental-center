@@ -1,0 +1,11 @@
+= simple_form_for @sorder,:validate => true,url: return_admin_sorders_path(:id =>@sorder.id),method: :put do |f|
+	= f.input :applicant, disabled: true
+	= f.input :tel, disabled: true
+	= f.input :usetime, disabled: true
+	= f.input :usereason, :input_html => { :style => "height:80px" }, as: :text, disabled: true
+	= f.input :site_name, disabled: true
+	= f.input :opinion, :validate => { :presence => true}
+	= f.input :returntime, :validate => { :presence => true}
+	= f.input :situation, :validate => { :presence => true}
+	= f.input :keeper
+	= f.submit "提交", class: "btn"

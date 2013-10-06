@@ -1,7 +1,28 @@
 div class="copyright"
   ul
    	span 友情链接：
-    li: a href="http://www.swpu.edu.cn" 西南石油大学
-    li: a href="http://art.swpu.edu.cn" 艺术院首页
-    li = link_to "管理员登录",admin_root_path
+    - @blogrolls.each do |blogroll|
+      li = link_to blogroll.name,blogroll.link_str,target: "_blank"
+    li: a href="#myModal" data-toggle="modal" 登录
     li class="cop" Copyright 软件外包团队
+div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  div class="modal-header"
+    button type="button" class="close" data-dismiss="modal" aria-hidden="true" ×
+    h3 id="myModalLabel" 管理员登录
+  div class="modal-body"
+    .span4
+      = form_tag sessions_path do
+        label for="login" 用户名
+        |
+        = text_field_tag :login,params[:login]
+        br
+        label for="password" 密码
+        |
+        = password_field_tag :password,params[:password]
+        br
+        .span1
+          = submit_tag "登录" ,class: "btn btn-primary", 'data-disable-with' => "登录中..."
+        .span1
+          button class="btn" data-dismiss="modal" aria-hidden="true" 关闭
+    .sapn1
+      p 亲，只能管理员登录哦！

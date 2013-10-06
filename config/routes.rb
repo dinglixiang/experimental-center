@@ -2,7 +2,7 @@ ExperimentalCenter::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
 
-  devise_for :users
+  #devise_for :users
   namespace :admin do
     root :to => 'home#index'
     resources :notices do
@@ -13,6 +13,8 @@ ExperimentalCenter::Application.routes.draw do
     end
     resources :site_requirements
     resources :devices
+    resources :specifications
+    resources :blogrolls
     resources :sites
     resources :users
     resources :videos
@@ -21,23 +23,35 @@ ExperimentalCenter::Application.routes.draw do
       collection do
         get "pass"
         get "unpass"
+        get "revert"
+        put "return"
       end
     end
     resources :sorders do
       collection do
         get "pass"
         get "unpass"
+        get "revert"
+        put "return"
       end
     end
   end
+  resources :sessions,only: [:new,:create,:destroy]
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
 
   resources :videos
   resources :dorders
   resources :sorders
-  resources :notices,only: [:index,:show]
+  resources :notices,only: [:index,:show] do
+    collection do
+      get "news"
+    end
+  end
   resources :devices,only: [:index] do
     collection do
       get "list"
+      get "download"
     end
   end
   resources :sites,only: [:index] do

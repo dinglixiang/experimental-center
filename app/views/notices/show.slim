@@ -3,7 +3,12 @@ div class="container"
 		.span12 align="center" style="margin-top:20px;"
 			h4 
 			  = @notice.title
-			span class="label" #{t('system.author')}: #{ @notice.author}&nbsp;&nbsp;&nbsp;&nbsp;	发布时间： #{@notice.created_at.strftime("%Y-%m-%d")}
 			hr  color="#8E8E8E" SIZE="3"
-		.span10
-			= @notice.content.to_s.html_safe
+		.span11
+			= @notice.content.html_safe
+		.span4.pull-right
+		  div style="margin-right: 30%;"
+		    p
+		      = @notice.author
+		      |&nbsp;&nbsp;&nbsp;&nbsp;
+		      = @notice.created_at.strftime("%Y年%m月%d日")

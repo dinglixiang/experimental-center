@@ -2,7 +2,7 @@
 
 module Admin 
 	class DevicesController < AdminController
-		before_filter :find_device, only: [:show,:edit,:update,:delete]
+		before_filter :find_device, only: [:show,:edit,:update,:destroy]
 
 		def index
 			@devices = Device.all
@@ -20,6 +20,7 @@ module Admin
 
 		def create
 			@device = Device.new(params[:device])
+			#render json: @device
 			if @device.save
 				redirect_to admin_devices_path,:notice => "设备添加成功!"
 			else

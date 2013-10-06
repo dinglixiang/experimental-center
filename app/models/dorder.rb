@@ -5,7 +5,7 @@ class Dorder
   
   field :applicant
   field :tel
-  field :usetime
+  field :usetime,type: String
   field :usereason
   field :device_name
   field :opinion 
@@ -20,7 +20,14 @@ class Dorder
 
   belongs_to :device
 
-  STATUS =["未审核","审核通过","未通过","已审核"]
+  scope :unaudited,where(state: 1)
+  scope :pass,where(state: 2)
+  scope :unpass,where(state: 3)
+
+
+
+
+  STATUS =["未审核","审核通过","未通过","已归还"]
 
   def pass_state
     if state == 1

@@ -16,6 +16,7 @@
 //= require rails.validations
 //= require rails.validations.simple_form
 //= require ckeditor/init
+//= require bootstrap-datetimepicker
 //= require_tree .
 
 
