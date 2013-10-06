@@ -5,10 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+#创建用户
 User.create( login: "admin",
 	         password: "123456789",
 	        )
+
+#创建友情链接
+Blogroll.create(name: "西南石油大学",link_str: "http://www.swpu.edu.cn")
+Blogroll.create(name: "艺术院首页",link_str: "http://art.swpu.edu.cn")
+
+#初始化设备
 DEVICE_NAME = ["摄录一体机","摄录一体机","数码单反照相机","数码HD 摄录一体机","专业数码照相机","12米轨道"]
 DEVICE_TYPE = ["SONY PMW-EX1R","SONY HVR-Z5C","佳能EOS 550D","SONY HXR-NX5C","佳能EOS 5D Mark2","飞行船FXC-650MM12"]
 DEVICE_OPEN_URL = ['app/assets/images/SONYPMWEX1R.png','app/assets/images/SONYZ5C.png','app/assets/images/JIANENG550D.jpg','app/assets/images/SONYNX5C.jpg','app/assets/images/JIANENG5D2.jpg','app/assets/images/HUAGUI.jpg']
@@ -24,7 +30,7 @@ DEVICE_REMAIN =[3,4,15,15,1,1]
 # d.image = File.open('app/assets/images/JIANENG5D2.jpg')
 # d.save!
 
-
+#初始化场地
 Site.create(name: '苹果机房',
 			  description: "这是苹果机房，专门为学院的学生提供计算机使用的平台",
 	          state: "空闲",

@@ -7,6 +7,7 @@ zh_CN:
     site:   场地管理
     dorder: 设备预约
     sorder: 场地预约
+    blogroll: 友情链接
     today_dorder: 未审核设备预约
     today_sorder: 未审核场地预约
   views:
@@ -18,6 +19,9 @@ zh_CN:
       truncate: "&hellip;"
   simple_form:
     labels:
+      blogroll:
+        name: 链接名称
+        link_str: 链接地址
       site_requirement:
         content: 内容
       notice:

@@ -14,6 +14,7 @@ ExperimentalCenter::Application.routes.draw do
     resources :site_requirements
     resources :devices
     resources :specifications
+    resources :blogrolls
     resources :sites
     resources :users
     resources :rules
