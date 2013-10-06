@@ -35,23 +35,22 @@ a{text-decoration:none;}
 
 /*通知公告*/
 .notice{width:225px; height:341px; background:url(ArtWeb_10.gif) no-repeat;  position:relative; left:280px; top:-330px; padding:10px 20px; margin-left: 355px;}
-.notice h1{color:#f8d449; margin-bottom:10px;} 
+.notice h3{color:#f8d449; margin-bottom:10px;} 
 .notice p{font-size:15px;  font-weight:500; color:#fff; margin-bottom:10px;}
 .notice p span{color:#f8d449;}
 .notice h2 a{ display:block; color:#f8d449; font-size:16px; font-weight:400; margin-top:40px;}
 .notice h2 a:hover{text-decoration:underline;}
 /*通知公告*/
 
-
 /*inform*/
 .infrom{height:350px; margin-top:40px; }
 
 
 	/*预约*/
-.order{ width:235px; height:250px; padding:60px 10px 2px 40px;  float:left; background:url(ArtWeb_13.gif) no-repeat left top; font-size:12px; margin:20px 5px 0px 40px;}
+.order{ width:290px; height:250px; padding:60px 10px 2px 10px;  float:left; background:url(ArtWeb_13.gif) no-repeat left top; font-size:13px; margin:20px 5px 0px 40px;}
 .order ul{ list-style-type:disc;margin-left: 0px;} 
 .order ul li{margin-bottom:5px;}
-.order ul li a{color:#000;}
+.order ul li a{color: #000;}
 .order ul li span{color:#09F; float:right;}
 .order ul li a:hover{ color:#666; text-decoration:underline;}
 .order ul li a span:hover{color:#666;}
@@ -60,7 +59,7 @@ a{text-decoration:none;}
 	/*预约*/
 	
 	/*设备*/
-.equipment{ width:235px; height:250px; padding:60px 10px 2px 40px;  float:left; background:url(ArtWeb_11.gif) no-repeat left top; font-size:12px; margin:18px 0px 0px 5px;}
+.equipment{ width:290px; height:250px; padding:60px 10px 2px 10px;  float:left; background:url(ArtWeb_11.gif) no-repeat left top; font-size:13px; margin:18px 0px 0px 5px;}
 .equipment ul{ list-style-type:disc;margin-left: 0px;}
 .equipment ul li{margin-bottom:5px;}
 .equipment ul li a{color:#000;}
@@ -71,10 +70,9 @@ a{text-decoration:none;}
 .equipment h1 a:hover{background:url(ArtWeb_29.gif) no-repeat;}
 	/*设备*/
 
-.tel{ width:293px; height:177px; float:left; background:url(ArtWeb_22.gif) no-repeat; margin:50px 0px 0px 40px;}
+.tel{ width:290px; height:177px; float:left; background:url(ArtWeb_22.gif) no-repeat; margin:50px 0px 0px 0px;}
 .tel:hover{background:url(ArtWeb_22_1.gif) no-repeat;}
 /*inform*/
-
 
 /*版权*/
 .copyright{ width:960px; height:18px; background:#f8d449; font-size:12px; padding:6px 0px 0px 0px; margin-left:3px;}

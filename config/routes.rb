@@ -41,7 +41,11 @@ ExperimentalCenter::Application.routes.draw do
 
   resources :dorders
   resources :sorders
-  resources :notices,only: [:index,:show]
+  resources :notices,only: [:index,:show] do
+    collection do
+      get "news"
+    end
+  end
   resources :devices,only: [:index] do
     collection do
       get "list"

@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
-  	#@blogrolls = Blogroll.all
+  	@dorders = Dorder.pass.limit(6)
+  	@sorders = Sorder.pass.limit(6)
   end
 end

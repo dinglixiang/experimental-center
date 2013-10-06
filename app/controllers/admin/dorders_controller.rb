@@ -41,8 +41,6 @@ module Admin
 	end
 
     def pass
-     # @dorder.device.remain -= 1
-    #  @device = @dorder.device
       @dorder.state = 2
       @dorder.opinion = "审核通过"
       @dorder.update_attributes(params[:dorder])

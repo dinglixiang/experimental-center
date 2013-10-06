@@ -4,7 +4,9 @@
 @import "bootstrap";
 @import 'bootstrap-datetimepicker';
 
-
+a {
+	color: #000;
+}
 a:hover {
 	color: #ffc40d;
 }
@@ -15,3 +17,7 @@ a:hover {
 .pull-btn {
 	margin-left: 65%;
 }
+
+.container a {color: #0088cc}
+
+
