@@ -4,7 +4,7 @@ div class="container2"
       ul
 	div class="right_content"
 	  div class="logoer"
-	    = image_tag 'device.gif'
+	    = image_tag 'shebeiqingdan.gif'
 	  table class="table table-striped"
 	    thead
 	    	tr
@@ -20,5 +20,5 @@ div class="container2"
             td = device.name
             td = device.type
             td = device.remain
-            td = link_to "说明书下载",'#'
+            td = link_to "说明书下载",download_devices_path(:dowanload_type => device.type)
 

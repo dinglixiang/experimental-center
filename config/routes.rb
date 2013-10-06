@@ -13,6 +13,7 @@ ExperimentalCenter::Application.routes.draw do
     end
     resources :site_requirements
     resources :devices
+    resources :specifications
     resources :sites
     resources :users
     resources :rules
@@ -43,6 +44,7 @@ ExperimentalCenter::Application.routes.draw do
   resources :devices,only: [:index] do
     collection do
       get "list"
+      get "download"
     end
   end
   resources :sites,only: [:index] do

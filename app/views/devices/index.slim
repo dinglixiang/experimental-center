@@ -7,7 +7,7 @@ div class="container2"
         li = link_to "使用情况",'#'
 	div class="right_content"
 	  div class="logoer"
-	    = image_tag 'device.gif'
+	    = image_tag 'shiyanshebei.gif'
 	  table class="table table-condensed"
 	    thead
 	    	tr
@@ -18,3 +18,5 @@ div class="container2"
 	    	  th 
 	    tbody
 	      = render @devices
+	  .pagination
+        = paginate @devices 

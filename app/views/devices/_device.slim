@@ -3,7 +3,7 @@ tr
   td = device.name
   td = device.type
   td = device.remain
-  td 
+  td
     br
     - if device.remain > 0
       = link_to "预约",new_dorder_path(:device_id => device.id),class: "btn"
