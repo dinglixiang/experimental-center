@@ -1,10 +1,15 @@
-
+<div style="margin:0px 0 10px 30px;">
 <div id="myElement" align="center">Loading the player...</div>
+
+
 
 <script>jwplayer.key="AhPghhyxrmMHSrawRrilmRMpiKjPRCP2YmyB9g==";</script>
 <script type="text/javascript">
     jwplayer("myElement").setup({
         file: "<%= @video.video.url%>",
-        image: "<%= @video.vimage.url%>"
+        image: "<%= @video.vimage.url%>",
+        width: 900,
+        height: 500
     });
 </script>
+</div>

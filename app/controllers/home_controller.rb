@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
-  	@dorders = Dorder.pass.limit(6)
-  	@sorders = Sorder.pass.limit(6)
+  	@notices = Notice.all
+  	@dorders = Dorder.pass.limit(8) || Dorder.return.limit(8)
+  	@sorders = Sorder.pass.limit(8)
   end
 end

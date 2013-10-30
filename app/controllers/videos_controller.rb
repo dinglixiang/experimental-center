@@ -11,4 +11,5 @@ class VideosController < ApplicationController
       format.json { render json: @video }
     end
 	end
+
 end

@@ -1,6 +1,6 @@
 class SitesController < ApplicationController
   def index
-    @sites = Site.all	
+    @sites = Site.page(params[:page]).per(4)	
   end
 
   def requirement 

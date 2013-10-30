@@ -19,6 +19,7 @@ ExperimentalCenter::Application.routes.draw do
     resources :users
     resources :videos
     resources :rules
+    resources :introductions
     resources :dorders do
       collection do
         get "pass"
@@ -43,6 +44,7 @@ ExperimentalCenter::Application.routes.draw do
   resources :videos
   resources :dorders
   resources :sorders
+  resources :introductions
   resources :notices,only: [:index,:show] do
     collection do
       get "news"

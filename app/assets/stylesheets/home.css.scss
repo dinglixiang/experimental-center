@@ -20,4 +20,34 @@ a:hover {
 
 .container a {color: #0088cc}
 
+.video-image {
+	width:100px;
+	height:100px;
+}
+
+.align-center {
+	margin-left: 15%;
+}
+
+.box{
+width:225px;
+height:200px;
+line-height:25px;
+overflow:hidden;
+}
+.box ul{margin:0; padding:0}
+.box li{
+height:25px;
+line-height:20px;
+font-size:15px;
+font-weight:500; 
+color:#fff; 
+margin-bottom:40px;
+//text-align:center;
+list-style-type:none;
+}
+.box li a {color:#fff; }
+.box li span{color:#f8d449;}
+
+
 

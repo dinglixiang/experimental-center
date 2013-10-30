@@ -4,7 +4,7 @@ module Admin
     before_filter :find_site,only: [:show,:edit,:destroy,:update]
 
 		def index
-			@sites = Site.all
+			@sites = Site.page(params[:page]).per(10)
 		end
 		def show
 		end

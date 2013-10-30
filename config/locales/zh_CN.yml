@@ -3,6 +3,7 @@ zh_CN:
     title: 艺术教学实验中心
     notice: 通知管理
     author: 作者
+    introduction: 中心介绍
     device: 设备管理
     site:   场地管理
     dorder: 设备预约
@@ -22,6 +23,9 @@ zh_CN:
       truncate: "&hellip;"
   simple_form:
     labels:
+      introduction:
+        title: 标题
+        content: 内容
       blogroll:
         name: 链接名称
         link_str: 链接地址

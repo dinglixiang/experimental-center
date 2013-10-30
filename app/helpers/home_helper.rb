@@ -1,5 +1,9 @@
 module HomeHelper
 	def truncate_str(text)
-		return text[0,7]
+		if text.length > 6
+		  text[0,6].to_s << ".."
+		else
+			text << "    "
+		end
 	end
 end

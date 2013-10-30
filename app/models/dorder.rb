@@ -23,6 +23,8 @@ class Dorder
   scope :unaudited,where(state: 1)
   scope :pass,where(state: 2)
   scope :unpass,where(state: 3)
+  scope :return,where(state: 4)
+ # scope :home_show,where(state: [2..3])
 
 
 

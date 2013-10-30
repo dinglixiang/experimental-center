@@ -1,0 +1,12 @@
+div class="container2"
+  div class="center_content"
+    div class="left_nav"
+      ul
+        - @introductions.each do |introduction|
+          li = link_to introduction.title, introduction_path(introduction)
+	div class="right_content"
+	  div class="logoer"
+	    = image_tag 'yuyueqingkuang.gif'
+	  br
+      = @introduction.content.html_safe
+

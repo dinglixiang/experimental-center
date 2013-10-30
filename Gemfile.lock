@@ -50,6 +50,7 @@ GEM
       carrierwave (~> 0.7.1)
       mongoid (~> 3.0)
       mongoid-grid_fs (~> 1.3)
+    china_sms (0.0.5)
     ckeditor (4.0.4)
       mime-types
       orm_adapter
@@ -184,6 +185,7 @@ DEPENDENCIES
   cancan (>= 1.6.8)
   carrierwave
   carrierwave-mongoid
+  china_sms
   ckeditor
   client_side_validations
   client_side_validations-simple_form

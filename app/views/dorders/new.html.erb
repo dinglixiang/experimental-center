@@ -26,12 +26,14 @@
         </tr>
         <tr>
           <td>使用时间：</td>
-          <td><div id="datetimepicker1" class="input-append date add-on">
-            <%= f.text_field :usetime,'data-format' => "dd/MM/yyyy hh:mm:ss",type: "text" %>
+          <td>
+            <div id="datetimepicker1" class="input-append date add-on">
+            <%= f.text_field :usetime,'data-format' => "dd/MM/yyyy hh:mm",type: "text" %>
             <span class="add-on">
             <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
           </span>
-        </div></td>
+        </div>
+        </td>
         </tr>
         <tr>
           <td>使用原因：</td>
@@ -62,6 +64,9 @@
 <script type="text/javascript">
   $(function() {
     $('#datetimepicker1').datetimepicker({
+      language: 'pt-BR'
+    });
+    $('#datetimepicker2').datetimepicker({
       language: 'pt-BR'
     });
   });

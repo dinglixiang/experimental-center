@@ -29,6 +29,7 @@ gem "carrierwave-mongoid", :require => 'carrierwave/mongoid'
 gem "mini_magick"
 gem "ckeditor"
 gem 'bootstrap-datetimepicker-rails'
+gem 'china_sms'
 gem 'rb-readline', '~> 0.4.2'
 
 group :assets do

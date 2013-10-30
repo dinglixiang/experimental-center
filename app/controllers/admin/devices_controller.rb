@@ -5,7 +5,7 @@ module Admin
 		before_filter :find_device, only: [:show,:edit,:update,:destroy]
 
 		def index
-			@devices = Device.all
+			@devices = Device.page(params[:page]).per(10)
 		end
 
 		def show

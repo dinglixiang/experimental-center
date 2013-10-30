@@ -2,11 +2,12 @@
 module Admin 
 	class DordersController < AdminController
   before_filter :find_dorder,only: [:edit,:show,:update,:destroy,:pass,:unpass,:revert,:return]
+  before_filter :sms_use,only: [:pass,:unpass]
 
 	def index
-		@pass_dorders = Dorder.where(state: 2)
-		@unaudited_dorders = Dorder.where(state: 1)
-		@unpass_dorders = Dorder.where(state: 3)
+		@pass_dorders = Dorder.where(state: 2).page(params[:page]).per(10)
+		@unaudited_dorders = Dorder.where(state: 1).page(params[:page]).per(10)
+		@unpass_dorders = Dorder.where(state: 3).page(params[:page]).per(10)
 	end
 
 	def show
@@ -42,12 +43,16 @@ module Admin
 
     def pass
       @dorder.state = 2
-      @dorder.opinion = "审核通过"
-      @dorder.update_attributes(params[:dorder])
+      @dorder.opinion = "审核通过"    
+      #render json: @dorder.device.remain-1
       @device = Device.find(@dorder.device_id)
       @device.remain -= 1
-      @device.update_attributes(params[:device])
-      redirect_to admin_dorders_path,:notice => "审核通过"
+      if @dorder.update_attributes(params[:dorder]) && @device.update_attributes(params[:device])
+      	sms_send(@dorder.tel,@dorder.applicant,@dorder.device_name)
+        redirect_to admin_dorders_path,:notice => "审核通过"
+      else
+      	redirect_to admin_dorders_path,:notice => "操作失败"
+      end
      # render json: @device
     end
 
@@ -64,8 +69,10 @@ module Admin
     def return
     	@dorder.state,@dorder.opinion = 4,"已归还"
     	@device = Device.find(@dorder.device_id)
+    	#render json: @device
     	@device.remain += 1  
     	if @dorder.update_attributes(params[:dorder]) && @device.update_attributes(params[:device])
+    		
 				redirect_to admin_dorders_path,:notice => "归还成功"
 			else
 				redirect_to admin_dorders_path,:notice => "归还失败"
@@ -75,6 +82,14 @@ module Admin
     private
     def find_dorder
 		@dorder = Dorder.find(params[:id])
+    end
+
+    def sms_use
+    	ChinaSMS.use :tui3, username: 'dinglixiang', password: 'd9cf4edec1321adb738371e712d1b07c'
+    end
+    #发送短信
+    def sms_send(phone,name,content)
+			ChinaSMS.to "#{phone}", "Center：#{name}您好，您预约的#{content}已通过审核，请规范使用并及时归还。[实验中心]"
     end
 	end
 end

@@ -2,7 +2,7 @@
 class SordersController < ApplicationController
 
   def index
-    @sorders = Sorder.all
+    @sorders = Sorder.page(params[:page]).per(14)
   end
 
   def show

@@ -12,3 +12,6 @@ div class="container2"
 	  table class="table table-striped"
 	    tbody
 	      = render @sites
+	    .pagination.pagination-centered
+        = paginate @sites 
+

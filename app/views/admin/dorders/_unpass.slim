@@ -23,3 +23,5 @@ table class="table table-bordered table-hover"
            = link_to "编辑", edit_admin_dorder_path(order)
            ||
            = link_to "删除", admin_dorder_path(order), method: :delete, data: { confirm: '确定此操作吗？' }	
+.pagination
+  = paginate @unpass_dorders

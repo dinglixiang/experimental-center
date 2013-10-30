@@ -28,5 +28,7 @@ table class="table table-bordered table-hover"
 	  	  td
 		  	  = link_to "编辑", edit_admin_site_path(site)
 	          ||
-	          = link_to "删除", admin_site_path(site) , method: :delete, data: { confirm: '确定此操作吗？' }		
+	          = link_to "删除", admin_site_path(site) , method: :delete, data: { confirm: '确定此操作吗？' }	
+.pagination
+  = paginate @sites 	
 

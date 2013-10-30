@@ -1,9 +1,28 @@
-
-
-
-
-<% @videos.each do |video1| %>
-
-<img src="<%= video1.vimage.url%>" style="width:100px;height:60px">
-<%= link_to '播放',video_path(video1)%><br/>
-<% end %>
+<div class="container2">
+	<div class="center_content">
+		<div class="left_nav">
+			<ul>
+				<li><%= link_to "近期新作","#"%></li>
+				<li><%= link_to "编导必看","#"%></li>
+				<li><%= link_to "经典回顾","#"%></li>
+			</ul>
+		</div>
+		<div class="right_content">
+			<div class="logoer">
+				<%= image_tag 'jinqixinzuo.gif'%>				
+			</div>
+			<div class="span10">
+				<br>
+				<% @videos.each do |video1| %>
+			<div class="span3">
+				<%= link_to image_tag(video1.vimage.url),video_path(video1),class: "video-image",target: "_blank"%>
+				
+				<br/>
+			  <%= link_to video1.name,video_path(video1),class: "align-center",target: "_blank"%>
+			</div>		
+			<% end %>
+			</div>
+			
+		</div>
+	</div>
+</div>

@@ -5,7 +5,7 @@ class DevicesController < ApplicationController
   end
 
   def list
-    @devices = Device.all
+    @devices = Device.page(params[:page]).per(10)
   end
 
   def download
