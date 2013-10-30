@@ -1,7 +1,6 @@
 div class="container2"
   div class="center_content"
-    div class="left_nav"
-      ul
+    = render 'left_nav'
 	div class="right_content"
 	  div class="logoer"
 	    = image_tag 'shebeiqingdan.gif'
@@ -18,5 +17,5 @@ div class="container2"
           tr
             td = index=index+1
             td = device.name
-            td = device.description
-            td = device.state
+            td = device.type
+            td = device.remain

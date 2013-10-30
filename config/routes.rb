@@ -61,6 +61,12 @@ ExperimentalCenter::Application.routes.draw do
       get "requirement"
       end
   end
+
+  resources :environments,only: [:index] do
+    collection do
+      get "site_list"
+    end
+  end 
   resources :rules,only: [:index]
 
   # The priority is based upon order of creation:

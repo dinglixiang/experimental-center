@@ -16,13 +16,11 @@ html
                 strong.text-info=t('system.title')
             span.divider-vertical
               ul class="nav nav-tabs nav-pills"
-                li = link_to '设备预约',admin_dorders_path
-
-                li = link_to '场地预约',admin_sorders_path      
-                li = link_to '视频共享',admin_videos_path
-                li = link_to '通知管理',admin_notices_path 
+                li = link_to '通知管理',admin_notices_path
                 li = link_to '中心介绍',admin_introductions_path
-                
+                li = link_to '设备预约',admin_dorders_path
+                li = link_to '场地预约',admin_sorders_path      
+                li = link_to '视频共享',admin_videos_path                
                 li.dropdown
                   a> class="dropdown-toggle" data-toggle="dropdown" href="#"
                     |  基本管理

@@ -1,5 +1,5 @@
 /*中间内容*/
-.center_content{height:700px; }
+.center_content{height:750px; }
 
 .centerplay{
   margin: 1px 0 0 500px;
@@ -14,9 +14,9 @@
 /*左侧导航*/
 
 /*右侧内容*/
-.right_content{width:620px; height:600px; float:left; margin:30px 0 0 60px;}
+.right_content{width:620px; height:auto; float:left; margin:30px 0 0 60px;}
 .right_content .logoer{height:55px;  width:620px; border-bottom:3px solid #ffcc33;}
-.right_content .content{width:620px; height:500px; margin-top:5px; border:1px solid #000;}
+.right_content .content{width:620px; height:auto; margin-top:5px; border:1px solid #000;}
 
   /*场地预约页面 right_content中的列表*/
 #place li{ display:block; background:url(order_3.gif) no-repeat; width:280px; height:119px; float:left; margin:10px 0 0 17px;}

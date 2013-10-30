@@ -1,0 +1,23 @@
+div class="container2"
+  div class="center_content"
+    = render 'left_nav'
+	div class="right_content"
+	  div class="logoer"
+	    = image_tag 'shebeiqingdan.gif'
+	  br
+	  table class="table table-bordered"
+	    thead
+	    	tr
+	    	  th.index_number 序号 
+	    	  th 场地图
+	    	  th 场地名称
+	    	  th 场地描述
+	    	  th 场地状态
+	    tbody
+        - @sites.each_with_index do |site,index|
+          tr
+            td = index=index+1
+            td = image_tag site.image_url(:thumb) if site.image? 
+            td = site.name
+            td = site.description
+            td = site.state
