@@ -1,3 +1,5 @@
+- provide(:state,'未通过') 
+= render 'sorder_header'
 table class="table table-bordered table-hover"
 	thead
 		tr
@@ -9,7 +11,7 @@ table class="table table-bordered table-hover"
 			th 审核状态
 			th 操作
 	tbody
-	  - @pass_sorders.each_with_index do |order,index|
+	  - @unpass_sorders.each_with_index do |order,index|
 	  	tr
 	  	  td = index = index+1
 	  	  td = link_to order.site_name,admin_sorder_path(order) 
@@ -18,7 +20,7 @@ table class="table table-bordered table-hover"
 	  	  td = order.created_at().strftime('%Y-%m-%d %H:%M:%S')  
 	  	  td = raw order.pass_state
 	  	  td
-           = link_to "归还", revert_admin_sorders_path(:id => order.id)
+           = link_to "同意", pass_admin_sorders_path(:id => order.id)
            ||
            = link_to "编辑", edit_admin_sorder_path(order)
            ||

@@ -8,8 +8,12 @@ div class="container2"
 	div class="right_content"
 	  div class="logoer"
 	    = image_tag 'changdisheshi.gif'
-	  br
-	  table class="table table-striped"
+	  table class="table table-bordered"
+	    thread
+	      th 场地图片
+	      th.span4 场地描述
+	      th 场地状态
+	      th
 	    tbody
 	      = render @sites
 	    .pagination.pagination-centered

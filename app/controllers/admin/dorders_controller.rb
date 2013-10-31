@@ -4,13 +4,19 @@ module Admin
   before_filter :find_dorder,only: [:edit,:show,:update,:destroy,:pass,:unpass,:revert,:return]
   before_filter :sms_use,only: [:pass,:unpass]
 
-	def index
-		@pass_dorders = Dorder.where(state: 2).page(params[:page]).per(10)
-		@unaudited_dorders = Dorder.where(state: 1).page(params[:page]).per(10)
-		@unpass_dorders = Dorder.where(state: 3).page(params[:page]).per(10)
+	def index	
+		@unaudited_dorders = Dorder.where(state: 1).page(params[:page]).per(10)		
 	end
 
-	def show
+  def published_list
+    @pass_dorders = Dorder.where(state: 2).page(params[:page]).per(10)
+  end
+
+  def banned_list
+    @unpass_dorders = Dorder.where(state: 3).page(params[:page]).per(10)
+  end
+
+	def show    
 	end
 
 	def new
@@ -48,7 +54,8 @@ module Admin
       @device = Device.find(@dorder.device_id)
       @device.remain -= 1
       if @dorder.update_attributes(params[:dorder]) && @device.update_attributes(params[:device])
-      	sms_send(@dorder.tel,@dorder.applicant,@dorder.device_name)
+        #ChinaSMS.to "#{@dorder.tel}", "Center：#{@dorder.applicant}您好，您预约的#{@dorder.device_name}已通过审核，请规范使用并及时归还。[实验中心]"
+      	#sms_send(@dorder.tel,@dorder.applicant,@dorder.device_name)
         redirect_to admin_dorders_path,:notice => "审核通过"
       else
       	redirect_to admin_dorders_path,:notice => "操作失败"

@@ -1,0 +1,13 @@
+h4
+  i.icon-list-alt
+  span.text-info #{link_to t('system.dorder'),admin_dorders_path} | #{yield :state}
+ul class="nav nav-tabs"
+  li
+    = link_to "未审核",admin_dorders_path 
+  li
+    = link_to "审核通过",published_list_admin_dorders_path
+  li
+    = link_to "未通过",banned_list_admin_dorders_path
+
+
+

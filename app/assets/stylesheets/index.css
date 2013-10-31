@@ -82,3 +82,32 @@ a{text-decoration:none;}
 .copyright li a:hover{color:#000; text-decoration:underline;}
 .copyright li.cop{ display:block; float:right; margin-right:40px;}
 /*版权*/
+
+.footer1 {
+	padding:10px 0 20px;
+	border-top: 1px solid #ddd;
+	text-align: center;
+	font-family: Arial,sans-serif;
+	font-size: 12px;
+	background-color: white;
+}
+
+.footer_nav {
+	height: 30px;
+	line-height: 30px;
+	font-size: 13px;
+}
+
+.footer1 p {
+	color: #787878;
+	line-height: 30px;
+}
+
+.footer_nav a.first {
+	border-left: 0;
+}
+
+.footer_nav a {
+	padding:0 10px;
+	border-left:1px solid #ccc;
+}

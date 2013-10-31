@@ -3,10 +3,16 @@ module Admin
 	class NoticesController < AdminController
 		before_filter :find_notice,only: [:show,:edit,:update,:destroy,:pass,:unpass]
     
-		def index
-			@pass_notices = Notice.where(state: 2).page(params[:page]).per(10)
-			@unpass_notices = Notice.where(state: 3).page(params[:page]).per(10)
+		def index		
 			@unaudited_notices = Notice.where(state: 1).page(params[:page]).per(10)
+		end
+
+		def published_list
+			@pass_notices = Notice.where(state: 2).page(params[:page]).per(10)
+		end
+
+		def banned_list
+			@unpass_notices = Notice.where(state: 3).page(params[:page]).per(10)
 		end
 
 		def show

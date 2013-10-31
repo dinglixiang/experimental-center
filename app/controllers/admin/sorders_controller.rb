@@ -4,15 +4,23 @@ module Admin
     before_filter :find_sorder,only: [:show,:update,:destroy,:edit,:pass,:unpass,:revert,:return] 
 
 		def index
-			@unaudited_sorders = Sorder.where(state: 1).page(params[:page]).per(10)
-      @pass_sorders = Sorder.where(state: 2).page(params[:page]).per(10)
-      @unpass_sorders = Sorder.where(state: 3).page(params[:page]).per(10)
+			@unaudited_sorders = Sorder.where(state: 1).page(params[:page]).per(10)     
 		end
+
+    def published_list
+      @pass_sorders = Sorder.where(state: 2).page(params[:page]).per(10)
+    end
+
+    def banned_list
+      @unpass_sorders = Sorder.where(state: 3).page(params[:page]).per(10)
+    end
 
 		def new
 		end
+
 		def show
 		end
+
 		def create
 		end
 

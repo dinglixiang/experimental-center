@@ -9,6 +9,8 @@ ExperimentalCenter::Application.routes.draw do
       collection do
         get "pass"
         get "unpass"
+        get "published_list"
+        get "banned_list"
       end
     end
     resources :site_requirements
@@ -26,6 +28,8 @@ ExperimentalCenter::Application.routes.draw do
         get "unpass"
         get "revert"
         put "return"
+        get "published_list"
+        get "banned_list"
       end
     end
     resources :sorders do
@@ -34,6 +38,8 @@ ExperimentalCenter::Application.routes.draw do
         get "unpass"
         get "revert"
         put "return"
+        get "published_list"
+        get "banned_list"
       end
     end
   end

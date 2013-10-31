@@ -1,3 +1,5 @@
+- provide(:state,'审核通过') 
+= render 'notice_header'
 table class="table table-bordered table-hover"
 	thead
 		tr
@@ -9,21 +11,19 @@ table class="table table-bordered table-hover"
 			th 审核状态 
 			th 操作
 	tbody
-	  - @unaudited_notices.each_with_index do |notice,index|
+	  - @pass_notices.each_with_index do |notice,index|
 	  	tr
 	  	  td = index = index+1 
-	  	  td = link_to notice.title,admin_notice_path(notice)  	  
+	  	  td = link_to notice.title,admin_notice_path(notice)	  	  
 	  	  td = notice.author
 	  	  td = notice.created_at().strftime('%Y-%m-%d %H:%M:%S')
 	  	  td = notice.tag
 	  	  td = raw notice.pass_state
 	  	  td 
-           = link_to "审核通过",pass_admin_notices_path(:id => notice.id)
-           ||
            = link_to "不通过",unpass_admin_notices_path(:id => notice.id)
            ||
            = link_to "编辑",edit_admin_notice_path(notice)
            ||
            = link_to "删除", admin_notice_path(notice) , method: :delete, data: { confirm: '确定此操作吗？' }	
 .pagination
-  = paginate @unaudited_notices
+  = paginate @pass_notices
