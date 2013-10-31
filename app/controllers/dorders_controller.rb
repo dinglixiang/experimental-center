@@ -1,6 +1,6 @@
 class DordersController < ApplicationController
   def index
-    @dorders = Dorder.page(params[:page]).per(14)
+    @dorders = Dorder.page(params[:page]).per(10)
   end
 
   def show
