@@ -10,15 +10,13 @@ gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
 gem 'kaminari'
 gem "mongoid-simple-tags"
-gem "settingslogic"
+# gem "settingslogic"
 gem 'jquery-rails'
-gem "spreadsheet"
+# gem "spreadsheet"
 gem "mongoid", "~> 3.0.0"
 gem "bson_ext"
 gem 'slim'
-gem "devise", ">= 2.1.2"
-gem "cancan", ">= 1.6.8"
-gem "rolify", ">= 3.2.0"
+
 gem "simple_form", ">= 2.0.4"
 gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "figaro", ">= 0.5.0"
@@ -29,8 +27,13 @@ gem "carrierwave-mongoid", :require => 'carrierwave/mongoid'
 gem "mini_magick"
 gem "ckeditor"
 gem 'bootstrap-datetimepicker-rails'
-gem 'china_sms'
-gem 'rb-readline', '~> 0.4.2'
+gem 'lazy_high_charts'
+gem "cancan", ">= 1.6.8"
+# gem 'china_sms'
+# gem 'rb-readline', '~> 0.4.2'
+# gem "devise", ">= 2.1.2"
+
+# gem "rolify", ">= 3.2.0"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3' 

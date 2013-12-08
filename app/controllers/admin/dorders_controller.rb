@@ -15,8 +15,12 @@ module Admin
   def banned_list
     @unpass_dorders = Dorder.where(state: 3).page(params[:page]).per(10)
   end
+  
+  def history
+  
+  end
 
-	def show    
+	def show
 	end
 
 	def new

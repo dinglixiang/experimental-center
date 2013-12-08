@@ -1,3 +1,4 @@
+#encoding: utf-8
 class Sorder
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -6,6 +7,7 @@ class Sorder
   field :tel
   field :usetime
   field :usereason
+  field :teacher
   field :site_name
   field :opinion 
   field :returntime

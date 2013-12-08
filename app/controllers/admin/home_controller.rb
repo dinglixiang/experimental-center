@@ -5,7 +5,56 @@ module Admin
 	def index
       @dorders = Dorder.where(state: 1)
       @sorders = Sorder.where(state: 1)
-	end		
+      @chart = LazyHighCharts::HighChart.new('line_labels') do |f|
+      f.chart({
+         type: 'line'
+      })
+      f.title({
+        text: '设备借用统计表'
+      })
+      f.subtitle({
+          text: '2012-2013年度统计数据'
+      })
+      f.xAxis({
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      })
+      f.yAxis({
+         title: {
+            text: '借用次数 (/次)'
+                         }
+      })
+      f.tooltip({
+        enabled: false,
+        formatter: %|function() {
+                             return '<b>'+ this.series.name +'</b><br/>'+
+                                 this.x +': '+ this.y +'°C';
+                         }|.js_code
+
+      })
+      f.plotOptions({
+         line: {
+               dataLabels: {
+                  enabled: true,
+                  enableMouseTracking: false
+               }
+          }
+      })
+
+      f.series({
+         name: '摄录一体机',
+         data: [7, 6, 9, 14, 18, 21, 25, 26, 23, 18, 13, 9]
+      })
+      f.series({
+          name: '数码照相机',
+          data: [3, 4, 5, 8, 11, 15, 17, 16, 14, 10, 6, 4]
+      
+      })
+
+    end
+
+	end	
+
+
   end
 
 end

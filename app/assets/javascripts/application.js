@@ -15,6 +15,9 @@
 //= require bootstrap
 //= require rails.validations
 //= require rails.validations.simple_form
+//= require highcharts/highcharts           
+//= require highcharts/highcharts-more
+//= require highcharts/highstock
 //= require ckeditor/init
 //= require bootstrap-datetimepicker
 //= require_tree .

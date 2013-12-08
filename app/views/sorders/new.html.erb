@@ -25,6 +25,10 @@
           <td><%= f.text_field :tel, placeholder: 'Mobile Phone' %></td>
         </tr>
         <tr>
+          <td>负责教师：</td>
+          <td><%= f.text_field :teacher %></td>
+        </tr>
+        <tr>
           <td>使用时间：</td>
           <td><div id="datetimepicker1" class="input-append date add-on">
             <%= f.text_field :usetime,'data-format' => "dd/MM/yyyy hh:mm:ss",type: "text" %>

@@ -1,0 +1,26 @@
+<script type="text/javascript" chartset="utf-8">
+
+	 $(function() {
+	 	new Highcharts.Chart({
+	 		chart: {
+	 			renderTo: "dorders_chart"
+	 		},
+	 		title: {
+	 			text: "设备借用日览表"
+	 		},
+	 		xAxis: {
+	 			type: "datatime"
+	 		},
+	 		yAxis: {
+	 			title: {
+	 				text: "借用次数"
+	 			}
+	 		},
+	 		series: [{
+	 			data: [1,2,4,6,9,2,4,8]
+	 		}]
+	 	})
+	 });
+</script>
+
+<%= high_chart("my_id4", @chart)  %>

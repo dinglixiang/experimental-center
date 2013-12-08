@@ -7,6 +7,7 @@ table class="table table-bordered table-hover"
 			th.span2 预约设备
 			th 预约人 
 			th 联系方式 
+			th 设备编号 
 			th 使用时间
 			th 审核状态 
 			th 操作
@@ -17,6 +18,7 @@ table class="table table-bordered table-hover"
 	  	  td = link_to order.device_name,admin_dorder_path(order)
 	  	  td = order.applicant
 	  	  td = order.tel
+	  	  td = order.device_num
 	  	  td = order.created_at().strftime('%Y-%m-%d %H:%M:%S')
 	  	  td = raw order.pass_state
 	  	  td

@@ -16,8 +16,11 @@ div class="container2"
           td 联系方式
           td = @sorder.tel
         tr style="height:50px;" 
+          td colspan="2" 负责教师
+          td colspan="2" = @sorder.teacher
+        tr style="height:50px;" 
           td colspan="2" 使用时间
-          td colspan="2" = @sorder.usetime
+          td colspan="2" = @sorder.usetime   
         tr style="height:50px;" 
           td colspan="2" 长时间借用原因
           td colspan="2" = @sorder.usereason

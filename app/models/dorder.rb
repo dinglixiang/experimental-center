@@ -1,3 +1,4 @@
+#encoding:utf-8
 class Dorder
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -7,7 +8,9 @@ class Dorder
   field :tel
   field :usetime,type: String
   field :usereason
+  field :teacher
   field :device_name
+  field :device_num
   field :opinion 
   field :returntime
   field :situation
@@ -20,13 +23,11 @@ class Dorder
 
   belongs_to :device
 
-  scope :unaudited,where(state: 1)
-  scope :pass,where(state: 2)
-  scope :unpass,where(state: 3)
-  scope :return,where(state: 4)
+  scope :unaudited, where(state: 1)
+  scope :pass, where(state: 2)
+  scope :unpass, where(state: 3)
+  scope :return, where(state: 4)
  # scope :home_show,where(state: [2..3])
-
-
 
 
   STATUS =["未审核","审核通过","未通过","已归还"]

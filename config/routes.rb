@@ -5,6 +5,11 @@ ExperimentalCenter::Application.routes.draw do
   #devise_for :users
   namespace :admin do
     root :to => 'home#index'
+    resources :home do
+      collection do
+        get "chart"
+      end
+    end
     resources :notices do
       collection do
         get "pass"

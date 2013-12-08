@@ -9,6 +9,7 @@ table class="table table-bordered table-hover"
 			th 设备图片
 			th 设备名称
 			th 设备类型
+			th 设备编号
 			th 设备剩余量
 			th 操作
 	tbody
@@ -18,6 +19,7 @@ table class="table table-bordered table-hover"
 	  	  td = image_tag device.image_url(:thumb) if device.image? 
 	  	  td = device.name	  	  
 	  	  td = device.type
+	  	  td = device.number
 	  	  td = device.remain
 	  	  td
 		  	  = link_to "编辑", edit_admin_device_path(device)

@@ -3,7 +3,8 @@ class Device
 
   field :name, type: String
   field :type, type: String
-  field :remain, type: Integer 
+  field :remain, type: Integer
+  field :number 
   field :specification_id
   field :image, type: String
 

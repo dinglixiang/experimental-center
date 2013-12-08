@@ -38,6 +38,7 @@ zh_CN:
       device:
         name: 设备名称
         type: 设备类型
+        number: 设备编号
         remain: 设备剩余量
         image: 设备图片
         remote_image_url: 图片URL
@@ -52,6 +53,7 @@ zh_CN:
       dorder:
         applicant: 申请人 
         tel: 联系方式
+        teacher: 负责教师
         usetime: 使用时间
         usereason: 使用原因
         device_name: 设备名称
@@ -62,6 +64,7 @@ zh_CN:
       sorder:
         applicant: 申请人 
         tel: 联系方式
+        teacher: 负责教师
         usetime: 使用时间
         usereason: 使用原因
         site_name: 场地名称
@@ -115,6 +118,9 @@ zh_CN:
             tel:
               blank: 必填项
               presence: 必填项
+            teacher:
+              blank: 必填项
+              presence: 必填项
             usereason:
               blank: 必填项
               presence: 必填项
@@ -130,6 +136,9 @@ zh_CN:
               blank: 必填项
               presence: 必填项
             tel:
+              blank: 必填项
+              presence: 必填项
+            teacher:
               blank: 必填项
               presence: 必填项
             usereason:

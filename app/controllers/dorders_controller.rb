@@ -1,3 +1,4 @@
+#encoding:utf-8
 class DordersController < ApplicationController
   def index
     @dorders = Dorder.page(params[:page]).per(10)
