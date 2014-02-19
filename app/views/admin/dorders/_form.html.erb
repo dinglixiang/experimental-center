@@ -1,0 +1,37 @@
+<%= render 'dorder_header'%>
+<table class="table table-bordered table-hover" id="entries">
+	<thead>
+		<tr>
+			<th>序号</th>
+			<th class="span2">预约设备</th>
+			<th>预约人</th>
+			<th>联系方式</th>
+			<th>设备编号</th>
+			<th>使用时间</th>
+			<th>审核状态 </th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <% @dorders.each_with_index do |dorder,index| %>
+	  	<tr>
+	  	  <td><%= (index = index + 1) %></td>
+	  	  <td><%= link_to dorder.device_name,admin_dorder_path(dorder)  %></td>  
+	  	  <td><%= dorder.applicant %></td>
+	  	  <td><%= dorder.tel %></td>
+	  	  <td><%= dorder.device_num %></td>
+	  	  <td><%= dorder.created_at().strftime('%Y-%m-%d %H:%M:%S') %></td>
+	  	  <td><%= raw dorder.pass_state %></td>
+	  	  <td><%= link_to "审核通过",pass_admin_dorders_path(:id => dorder.id)%>
+           |<%= link_to "不通过",unpass_admin_dorders_path(:id => dorder.id)%>
+           |<%= link_to "归还", revert_admin_dorders_path(:id => dorder.id)%>
+           |<%= link_to "编辑",edit_admin_dorder_path(dorder)%>
+           |<%= link_to "删除", admin_dorder_path(dorder) , method: :delete, data: { confirm: '确定此操作吗？' }%>
+         </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="pagination">
+  <%= paginate @dorders %>
+</div>

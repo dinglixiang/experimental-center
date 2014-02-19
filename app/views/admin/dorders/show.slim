@@ -1,6 +1,6 @@
 h4
   i.icon-list-alt
-  span.text-info = link_to t('system.dorder'),admin_dorders_path
+  span.text-info.header-state #{link_to t('system.dorder'),admin_dorders_path} > #{@dorder.applicant}-#{@dorder.device_name}-#{@dorder.created_at().strftime('%Y-%m-%d %H:%M')}
 table style="width:50%;" border="1"
   tr style="height:50px;"
     td 申请人

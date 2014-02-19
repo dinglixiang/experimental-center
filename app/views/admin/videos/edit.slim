@@ -1,0 +1,6 @@
+= simple_form_for @video,:validate => true,:input_html => {:multipart => true},url: admin_video_path(@video) do |f|
+  = f.input :name
+  = f.input :vimage
+  = f.input :video
+  br
+  = f.submit "更新",class: "btn"

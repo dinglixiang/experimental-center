@@ -22,9 +22,10 @@ class Sorder
   validates_format_of :tel, :with =>  /^1[3|4|5|8]\d{9}$/, message: "联系方式格式不正确" 
 
 
-  scope :unaudited,where(state: 1)
-  scope :pass,where(state: 2)
-  scope :unpass,where(state: 3)
+  scope :unauthed, where(state: 1)
+  scope :published, where(state: 2)
+  scope :banned, where(state: 3)
+  scope :return, where(state: 4)
 
   STATUS =["未审核","审核通过","未通过","已归还"]
 

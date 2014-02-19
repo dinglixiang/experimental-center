@@ -12,14 +12,14 @@
 				<%= image_tag 'jinqixinzuo.gif'%>				
 			</div>
 			<div class="span10">
-				<br>
 				<% @videos.each do |video1| %>
-			<div class="span3">
+			<div class="span3" style="margin-top: 20px; margin-bottom: 20px;">
 				<%= link_to image_tag(video1.vimage.url),video_path(video1),class: "video-image",target: "_blank"%>
-				
-				<br/>
+        <br />
+        <br />
 			  <%= link_to video1.name,video_path(video1),class: "align-center",target: "_blank"%>
-			</div>		
+
+			</div>
 			<% end %>
 			</div>
 			

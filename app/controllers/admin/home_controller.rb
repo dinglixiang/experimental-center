@@ -5,7 +5,12 @@ module Admin
 	def index
       @dorders = Dorder.where(state: 1)
       @sorders = Sorder.where(state: 1)
-      @chart = LazyHighCharts::HighChart.new('line_labels') do |f|
+      annual_statement
+
+	end	
+
+  def annual_statement
+    @chart = LazyHighCharts::HighChart.new('graph') do |f|
       f.chart({
          type: 'line'
       })
@@ -19,9 +24,15 @@ module Admin
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
       })
       f.yAxis({
+        labels: {
+                  
+                    style: {
+                        color: '#89A54E'
+                    }
+                },
          title: {
             text: '借用次数 (/次)'
-                         }
+        }
       })
       f.tooltip({
         enabled: false,
@@ -42,6 +53,7 @@ module Admin
 
       f.series({
          name: '摄录一体机',
+         type: 'column',
          data: [7, 6, 9, 14, 18, 21, 25, 26, 23, 18, 13, 9]
       })
       f.series({
@@ -50,11 +62,10 @@ module Admin
       
       })
 
+      f.exporting(:enabled=>true,:enableImages=> true,:filename=>"#{DateTime.now}-intfocus")
+
     end
-
-	end	
-
-
+  end
   end
 
 end

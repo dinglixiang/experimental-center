@@ -1,0 +1,35 @@
+<%= render 'sorder_header'%>
+<table class="table table-bordered table-hover" id="entries">
+	<thead>
+		<tr>
+			<th>序号</th>
+			<th>预约场地</th>
+			<th>预约人</th>
+			<th>联系方式</th>
+			<th>使用时间</th>
+			<th>审核状态 </th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <% @sorders.each_with_index do |sorder,index| %>
+	  	<tr>
+	  	  <td><%= (index = index + 1) %></td>
+	  	  <td><%= link_to sorder.site_name,admin_sorder_path(sorder)  %></td>  
+	  	  <td><%= sorder.applicant %></td>
+	  	  <td><%= sorder.tel %></td>
+	  	  <td><%= sorder.created_at().strftime('%Y-%m-%d %H:%M:%S') %></td>
+	  	  <td><%= raw sorder.pass_state %></td>
+	  	  <td><%= link_to "审核通过",pass_admin_sorders_path(:id => sorder.id)%>
+           |<%= link_to "不通过",unpass_admin_sorders_path(:id => sorder.id)%>
+           |<%= link_to "归还", revert_admin_sorders_path(:id => sorder.id)%>
+           |<%= link_to "编辑",edit_admin_sorder_path(sorder)%>
+           |<%= link_to "删除", admin_sorder_path(sorder) , method: :delete, data: { confirm: '确定此操作吗？' }%>
+         </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="pagination">
+  <%= paginate @sorders %>
+</div>

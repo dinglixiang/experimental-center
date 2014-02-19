@@ -5,19 +5,23 @@ module Admin
   before_filter :sms_use,only: [:pass,:unpass]
 
 	def index	
-		@unaudited_dorders = Dorder.where(state: 1).page(params[:page]).per(10)		
+		@dorders = Dorder.unauthed.page(params[:page])		
 	end
 
   def published_list
-    @pass_dorders = Dorder.where(state: 2).page(params[:page]).per(10)
+    @dorders = Dorder.published.page(params[:page])
   end
 
   def banned_list
-    @unpass_dorders = Dorder.where(state: 3).page(params[:page]).per(10)
+    @dorders = Dorder.banned.page(params[:page])
+  end
+
+  def returned_list
+    @dorders = Dorder.return.page(params[:page])
   end
   
   def history
-  
+    @dorders = Dorder.all.page(params[:page])
   end
 
 	def show

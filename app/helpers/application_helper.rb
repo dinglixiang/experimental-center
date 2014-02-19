@@ -8,4 +8,18 @@ module ApplicationHelper
       order && order.total_price.to_f || 0
     end.inspect
   end
+
+  def convert_state_number_to_string(state)
+    case state.to_i
+      when 1 
+        "未审核"
+      when 2 
+        "审核通过"
+      when 3 
+        "未通过"
+      when 4 
+        "已审核"
+      else "All"
+    end
+  end
 end

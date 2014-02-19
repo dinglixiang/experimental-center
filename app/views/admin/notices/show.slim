@@ -1,6 +1,6 @@
 h4
   i.icon-list-alt
-  span.text-info = link_to t('system.notice'),admin_notices_path
+  span.text-info.header-state #{link_to t('system.notice'),admin_notices_path} > #{convert_state_number_to_string(@notice.state) } > #{@notice.title}
 h4 标题 
 = @notice.title
 br

@@ -10,8 +10,19 @@ a {
 a:hover {
 	color: #ffc40d;
 }
+
 #body{
 	background:url(bk_body.jpg);
+}
+
+.header-state {
+	color: #333333;
+	font-family: '黑体';
+	font-size: 14px;
+}
+
+.header-state a{
+	font-size: 18px;
 }
 
 .pull-btn {

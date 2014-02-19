@@ -23,9 +23,9 @@ class Dorder
 
   belongs_to :device
 
-  scope :unaudited, where(state: 1)
-  scope :pass, where(state: 2)
-  scope :unpass, where(state: 3)
+  scope :unauthed, where(state: 1)
+  scope :published, where(state: 2)
+  scope :banned, where(state: 3)
   scope :return, where(state: 4)
  # scope :home_show,where(state: [2..3])
 

@@ -3,13 +3,12 @@ div class="container"
   div class="row-fluid"
     p style="margin-left:8%;" 
       i.icon-map-marker
-      | #{ link_to "首页",root_path} | 
+      | #{ link_to "首页",root_path} > 
       = link_to "通知公告",notices_path
-      | &nbsp;| #{@notice.tag} 
-      || 正文
+      | &nbsp;> #{@notice.tag} 
+      |> #{ @notice.title}
     .span10 align="center" style="margin-top:10px;"
 			h4 #{@notice.title}
-    p.span10 #{@notice.author}#{@notice.created_at.strftime("%Y年%m月%d日")}
     br
     .span9 style="margin-left:8%;margin-right:8%;"
 			= @notice.content.html_safe

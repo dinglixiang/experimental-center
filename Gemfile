@@ -8,7 +8,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
-gem 'kaminari'
+gem 'kaminari', '~> 0.15.1'
 gem "mongoid-simple-tags"
 # gem "settingslogic"
 gem 'jquery-rails'
@@ -57,4 +57,5 @@ end
 #gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
+gem 'pry'

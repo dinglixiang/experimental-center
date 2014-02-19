@@ -1,0 +1,40 @@
+<% provide(:state, convert_state_number_to_string(params[:state])) %>
+<%= render 'notice_header'%>
+<table class="table table-bordered table-hover" id="entries">
+	<thead>
+		<tr>
+			<th> 序号</th>
+			<th>标题</th>
+			<th>作者</th>
+			<th>创建时间</th>
+			<th>标签</th>
+			<th>审核状态 </th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <% @notices.each_with_index do |notice,index| %>
+	  	<tr>
+	  	  <td><%= (index = index + 1) %></td>
+	  	  <td><%= link_to notice.title,admin_notice_path(notice) %></td>  
+	  	  <td><%= notice.author %></td>
+	  	  <td><%= notice.created_at().strftime('%Y-%m-%d %H:%M:%S') %></td>
+	  	  <td><%= notice.tag %></td>
+	  	  <td><%= raw notice.pass_state %></td>
+	  	  <td>
+	  	  	<% if !notice.published?%>
+	  	  	  <%= link_to "审核通过",pass_admin_notices_path(:id => notice.id)%>|
+	  	  	<% end %>
+	  	  	<% if !notice.banned?%>
+           <%= link_to "不通过",unpass_admin_notices_path(:id => notice.id)%>|
+          <% end %>
+           <%= link_to "编辑",edit_admin_notice_path(notice)%>
+           |<%= link_to "删除", admin_notice_path(notice) , method: :delete, data: { confirm: '确定此操作吗？' }%>
+         </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="pagination">
+  <%= paginate @notices %>
+</div>

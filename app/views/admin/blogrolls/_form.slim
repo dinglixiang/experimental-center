@@ -1,0 +1,5 @@
+= simple_form_for @blogroll, remote: true, :validate => true,:input_html => {:multipart => true},url: admin_blogrolls_path(@blogroll) do |f|
+  = f.input :name
+  = f.input :link_str
+  br
+  = f.submit "提交",class: "btn"

@@ -1,4 +1,4 @@
 h4
   i.icon-list-alt
-  span.text-info #{link_to t('system.introduction'),admin_introductions_path} | #{@introduction.title}
+  span.text-info.header-state #{link_to t('system.introduction'),admin_introductions_path} > #{@introduction.title}
 = @introduction.content.html_safe

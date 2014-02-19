@@ -1,18 +1,27 @@
 #encoding:utf-8
 module Admin 
 	class NoticesController < AdminController
-		before_filter :find_notice,only: [:show,:edit,:update,:destroy,:pass,:unpass]
+		before_filter :find_notice,only: [:show,:edit,:update,:destroy,:pass,:unpass], :except => [:search]
     
 		def index		
-			@unaudited_notices = Notice.where(state: 1).page(params[:page]).per(10)
+			@notices = Notice.unauthed.page(params[:page])
 		end
 
 		def published_list
-			@pass_notices = Notice.where(state: 2).page(params[:page]).per(10)
+			@notices = Notice.published.page(params[:page])
 		end
 
 		def banned_list
-			@unpass_notices = Notice.where(state: 3).page(params[:page]).per(10)
+			@notices = Notice.banned.page(params[:page])
+		end
+
+		def all
+			@notices = Notice.all.page(params[:page])
+		end
+
+		def search
+			return @notices = Notice.all.page(params[:page]).per(10) if params[:state].blank?
+			@notices = Notice.where(state: params[:state]).page(params[:page]).per(10)
 		end
 
 		def show
@@ -24,12 +33,14 @@ module Admin
 
 		def create
 			@notice = Notice.new(params[:notice])
-			if @notice.save
-				redirect_to admin_notices_path,:notice => "创建成功"
-			else
-				render :new
-			end
+
+		  if @notice.save
+		    redirect_to admin_notices_path,:notice => "创建成功" 
+		  else
+		    render :new 
+		  end
 		end
+
 		def edit
 		end
 
@@ -63,7 +74,7 @@ module Admin
 
     private
     def find_notice
-      @notice = Notice.find(params[:id])
+      @notice = Notice.where(id: params[:id]).first
     end
 	end
 end
