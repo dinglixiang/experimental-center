@@ -2,7 +2,7 @@
 module Admin 
 	class DordersController < AdminController
   before_filter :find_dorder,only: [:edit,:show,:update,:destroy,:pass,:unpass,:revert,:return]
-  before_filter :sms_use,only: [:pass,:unpass]
+  # before_filter :sms_use,only: [:pass,:unpass]
 
 	def index	
 		@dorders = Dorder.unauthed.page(params[:page])		
@@ -84,7 +84,6 @@ module Admin
     def return
     	@dorder.state,@dorder.opinion = 4,"已归还"
     	@device = Device.find(@dorder.device_id)
-    	#render json: @device
     	@device.remain += 1  
     	if @dorder.update_attributes(params[:dorder]) && @device.update_attributes(params[:device])
     		

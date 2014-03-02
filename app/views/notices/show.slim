@@ -3,8 +3,7 @@ div class="container"
   div class="row-fluid"
     p style="margin-left:8%;" 
       i.icon-map-marker
-      | #{ link_to "首页",root_path} > 
-      = link_to "通知公告",notices_path
+      | #{ link_to "首页",root_path} 
       | &nbsp;> #{@notice.tag} 
       |> #{ @notice.title}
     .span10 align="center" style="margin-top:10px;"

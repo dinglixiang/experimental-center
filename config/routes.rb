@@ -22,6 +22,11 @@ ExperimentalCenter::Application.routes.draw do
         get "all"
       end
     end
+    resources :charts do
+      collection do
+        get "basic_line"
+      end
+    end
     resources :site_requirements
     resources :devices
     resources :specifications

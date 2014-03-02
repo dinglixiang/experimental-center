@@ -17,18 +17,13 @@ class Notice
   scope :recent_news, where(tag: "学院新闻")
 
   scope :unauthed, where(state: 1)
-  scope :has_passed, where(state: 2)
   scope :published, where(state: 2)
   scope :banned, where(state: 3)
 
   STATUS =["未审核","审核通过","未通过","已审核"]
 
-  def authed?
-    self.state == 1
-  end
-
   def published?
-    self.state == 2
+    state == 2
   end
 
   def banned?

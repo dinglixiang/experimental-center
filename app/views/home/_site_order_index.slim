@@ -1,9 +1,9 @@
-- @dorders.each do |dorder|
-  = link_to(dorder) do
-    = truncate_str(dorder.device_name)
+- @sorders.each do |sorder|
+  = link_to(sorder) do
+    = truncate_str(sorder.site_name)
     |
-    = dorder.created_at.strftime("%m月%d日")
+    = sorder.created_at.strftime("%m月%d日")
     | 已被预约&nbsp;&nbsp;
     .pull-right
-      ="【#{dorder.created_at.strftime("%Y.%m.%d")}】"
+      ="【#{sorder.created_at.strftime("%Y.%m.%d")}】"
   br

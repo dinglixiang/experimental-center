@@ -4,4 +4,7 @@ class Ckeditor::Asset
   delegate :url, :current_path, :size, :content_type, :filename, :to => :data
   
   validates_presence_of :data
+
+  def assetable=(value) 
+  end
 end

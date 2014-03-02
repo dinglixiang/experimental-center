@@ -5,9 +5,15 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
     user ||= User.new # guest user (not logged in)
-    if user.has_role? :admin
+    # if user.has_role? :admin
       can :manage, :all
-    end
+      # Always performed
+can :access, :ckeditor   # needed to access Ckeditor filebrowser
+
+# Performed checks for actions:
+can [:read, :create, :destroy], Ckeditor::Picture
+can [:read, :create, :destroy], Ckeditor::AttachmentFile
+    # end
     #   else
     #     can :read, :all
     #   end

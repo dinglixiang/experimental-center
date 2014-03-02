@@ -20,10 +20,20 @@
 	  	  <td><%= sorder.tel %></td>
 	  	  <td><%= sorder.created_at().strftime('%Y-%m-%d %H:%M:%S') %></td>
 	  	  <td><%= raw sorder.pass_state %></td>
-	  	  <td><%= link_to "审核通过",pass_admin_sorders_path(:id => sorder.id)%>
-           |<%= link_to "不通过",unpass_admin_sorders_path(:id => sorder.id)%>
-           |<%= link_to "归还", revert_admin_sorders_path(:id => sorder.id)%>
-           |<%= link_to "编辑",edit_admin_sorder_path(sorder)%>
+	  	  <td>
+						<% if !sorder.returned? %>
+					   <% if sorder.authed? %>					    
+	  	       	<%= link_to "审核通过",pass_admin_sorders_path(:id => sorder.id)%> |
+					    <%= link_to "不通过",unpass_admin_sorders_path(:id => sorder.id)%> |
+					  <% end %>
+					  <% if sorder.passed? %>
+							<%= link_to "归还", revert_admin_sorders_path(:id => sorder.id)%> |
+	  	      <% end %>
+	  	      <% if sorder.banned? %>		    
+	  	        <%= link_to "审核通过",pass_admin_sorders_path(:id => sorder.id)%> |
+	  	      <% end %>          
+          <% end %>
+           <%= link_to "编辑",edit_admin_sorder_path(sorder)%>
            |<%= link_to "删除", admin_sorder_path(sorder) , method: :delete, data: { confirm: '确定此操作吗？' }%>
          </td>
       </tr>

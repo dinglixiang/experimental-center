@@ -13,7 +13,6 @@ class Sorder
   field :returntime
   field :situation
   field :keeper 
-  field :site_id
   field :state,type: Integer,default: 1
 
   belongs_to :site
@@ -39,5 +38,22 @@ class Sorder
     else
       "<span class='label'>#{STATUS[3]}</span>" 
     end
+  end
+
+  
+  def authed?
+    state == 1
+  end
+  
+  def passed?
+    state == 2
+  end
+
+  def banned?
+    state == 3
+  end
+
+  def returned?
+    state == 4
   end
 end

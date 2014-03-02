@@ -22,11 +22,21 @@
 	  	  <td><%= dorder.device_num %></td>
 	  	  <td><%= dorder.created_at().strftime('%Y-%m-%d %H:%M:%S') %></td>
 	  	  <td><%= raw dorder.pass_state %></td>
-	  	  <td><%= link_to "审核通过",pass_admin_dorders_path(:id => dorder.id)%>
-           |<%= link_to "不通过",unpass_admin_dorders_path(:id => dorder.id)%>
-           |<%= link_to "归还", revert_admin_dorders_path(:id => dorder.id)%>
-           |<%= link_to "编辑",edit_admin_dorder_path(dorder)%>
-           |<%= link_to "删除", admin_dorder_path(dorder) , method: :delete, data: { confirm: '确定此操作吗？' }%>
+	  	  <td>
+					<% if !dorder.returned? %>
+					  <% if dorder.authed? %>
+					    <%= link_to "审核通过",pass_admin_dorders_path(:id => dorder.id)%> |
+					    <%= link_to "不通过",unpass_admin_dorders_path(:id => dorder.id)%> |
+					  <% end %>
+					  <% if dorder.passed? %>
+							<%= link_to "归还", revert_admin_dorders_path(:id => dorder.id)%> |
+	  	      <% end %>
+	  	      <% if dorder.banned? %>		    
+	  	        <%= link_to "审核通过",pass_admin_dorders_path(:id => dorder.id)%> |
+	  	      <% end %>          
+          <% end %>
+           <%= link_to "编辑",edit_admin_dorder_path(dorder)%> |
+           <%= link_to "删除", admin_dorder_path(dorder) , method: :delete, data: { confirm: '确定此操作吗？' }%>
          </td>
       </tr>
     <% end %>

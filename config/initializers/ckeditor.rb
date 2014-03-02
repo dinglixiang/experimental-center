@@ -14,8 +14,9 @@ if Object.const_defined?("Ckeditor")
     # Allowed attachment file types for upload.
     # Set to nil or [] (empty array) for all file types
     # config.attachment_file_types = ["doc", "docx", "xls", "odt", "ods", "pdf", "rar", "zip", "tar", "swf"]
-
+    # config.extraPlugins = "attachment";
+    # config.assets_plugins = ['image', 'attachment']
     # Setup authorization to be run as a before filter
-     config.authorize_with :cancan
+    # config.authorize_with :cancan
   end
 end

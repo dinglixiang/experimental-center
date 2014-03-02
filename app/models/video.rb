@@ -7,5 +7,6 @@ class Video
   field :video, type: String
 
   mount_uploader :vimage, ImageUploader
+  # has_many :pictures
   mount_uploader :video, AvatarUploader
 end
