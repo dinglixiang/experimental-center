@@ -14,7 +14,7 @@ table class="table table-bordered table-hover"
 	  	tr
 	  	  td = index = index+1
 	  	  td = video.name
-	  	  td = image_tag video.image_url(:thumb) if video.vimage? 	  	  
+	  	  td = image_tag video.vimage_url(:thumb) if video.vimage? 	  	  
 	  	  td
 		  	  = link_to "编辑", edit_admin_video_path(video)
 	          ||
