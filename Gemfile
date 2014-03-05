@@ -51,12 +51,7 @@ end
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
-# Use unicorn as the app server
 gem 'unicorn'
-
-# Deploy with Capistrano
 gem 'capistrano', '~> 2.15.0'
+gem 'rvm-capistrano'
 
-# To use debugger
-gem 'debugger'
-gem 'pry'
