@@ -52,10 +52,10 @@ end
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-#gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
-#gem 'capistrano'
+gem 'capistrano', '~> 2.15.0'
 
 # To use debugger
 gem 'debugger'
