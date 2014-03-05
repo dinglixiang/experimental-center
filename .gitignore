@@ -16,6 +16,7 @@
 
 # Ignore application configuration
 /config/application.yml
+/config/mongoid.yml
 
 #Ignore uploads 
 /public/uploads
