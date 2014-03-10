@@ -34,7 +34,7 @@ gem "cancan", ">= 1.6.8"
 # gem 'rb-readline', '~> 0.4.2'
 # gem "devise", ">= 2.1.2"
 
-# gem "rolify", ">= 3.2.0"
+gem "rolify", ">= 3.2.0"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3' 
