@@ -1,3 +1,4 @@
+#encoding:utf-8
 module ApplicationHelper
 	def orders_chart_series(orders, start_time)
     orders_by_day = orders.where(:purchased_at => start_time.beginning_of_day..Time.zone.now.end_of_day).
