@@ -2,8 +2,8 @@ if RUBY_VERSION =~ /1.9/
   Encoding.default_external = Encoding::UTF_8
   Encoding.default_internal = Encoding::UTF_8
 end
-source 'https://rubygems.org'
-#source 'http://ruby.taobao.org'
+#source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.13'
 gem 'rails-i18n', '~> 3.0.0'
