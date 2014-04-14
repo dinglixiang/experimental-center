@@ -20,7 +20,7 @@ gem 'slim'
 
 gem "simple_form", ">= 2.0.4"
 gem "quiet_assets", ">= 1.0.1", :group => :development
-gem "figaro", ">= 0.5.0"
+#gem "figaro", ">= 0.5.0"
 gem "better_errors", ">= 0.2.0", :group => :development
 gem "binding_of_caller", ">= 0.6.8", :group => :development
 gem 'carrierwave', '~> 0.7.1'
@@ -36,12 +36,10 @@ gem "cancan", ">= 1.6.8"
 
 gem "rolify", ">= 3.2.0"
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3' 
-  gem 'bootstrap-sass', '~> 2.3.2.0'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'sass-rails',   '~> 3.2.3' 
+gem 'bootstrap-sass', '~> 2.3.2.0'
+gem 'coffee-rails', '~> 3.2.1'
+gem 'uglifier', '>= 1.0.3'
 
 
 

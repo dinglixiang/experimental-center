@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://ruby.taobao.org/
   specs:
     actionmailer (3.2.13)
       actionpack (= 3.2.13)
@@ -74,9 +74,6 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    figaro (0.7.0)
-      bundler (~> 1.0)
-      rails (>= 3, < 5)
     hash-deep-merge (0.1.1)
     highline (1.6.20)
     hike (1.2.3)
@@ -205,7 +202,6 @@ DEPENDENCIES
   client_side_validations
   client_side_validations-simple_form
   coffee-rails (~> 3.2.1)
-  figaro (>= 0.5.0)
   jquery-rails
   kaminari (~> 0.15.1)
   lazy_high_charts
